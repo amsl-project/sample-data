@@ -1,0 +1,449 @@
+@base <http://amsl.technology/labels/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix dc:  <http://purl.org/dc/elements/1.1/> .
+@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix aiiso: <http://purl.org/vocab/aiiso/schema#> .
+@prefix rdvocab: <http://rdaregistry.info/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix umbel: <http://umbel.org/umbel#> .
+@prefix lobid: <http://purl.org/lobid/lv#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sioc: <http://rdfs.org/sioc/types#> . 
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix amsl: <http://vocab.ub.uni-leipzig.de/amsl/> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+
+
+
+
+<> a owl:Ontology ;
+   rdfs:label "Auxiliary Labels"@en, "Labels (Zusätzliche Bezeichnungen)"@de ;
+   rdfs:comment "Diese Wissensbasis ist eine Sammlung von Bezeichnern für externe Ressourcen."@de, "This knowledge base is a collection of labels for external resources."@en .
+
+
+################ NOCH ZU KLÄREN ######################
+
+
+rdvocab:P60493
+	rdfs:label	"Other Title Information"@en ,
+			"Zusatz zum Sachtitel"@de .
+#Eigentlich richtig wäre diese URI: <http://www.rdaregistry.info/Elements/u/#P60493>, allerdings nutzt die ZDB einen falschen/veralteten Namespace.
+#zuvor bei uns verwendet: rdvocab:otherTitleInformation
+			
+
+rdvocab:P60163
+	a		owl:DataTypeProperty ;
+	rdfs:label 	"place of publication"@en ,
+			"Verlagsort"@de .
+#Eigentlich richtig wäre diese URI: <http://www.rdaregistry.info/Elements/u/#P60163>, allerdings nutzt die ZDB einen falschen/veralteten Namespace.
+#zuvor bei uns verwendet: rdvocab:placeOfPublication
+
+
+
+
+#############################################
+
+##### bibrm-Änderungen für OntoWiki ####
+
+# amsl:UnionLpAcd a owl:Class .
+
+# amsl:LicensePackage rdfs:subClassOf amsl:UnionLpAcd .
+
+# amsl:AnnualContractData rdfs:subClassOf amsl:UnionLpAcd .
+
+# amsl:contractItemOf rdfs:range amsl:UnionLpAcd .
+
+
+
+##### Aiiso #######			
+
+aiiso:Faculty
+	a		rdfs:Class ;
+	rdfs:label 	"Faculty"@en ,
+			"Fakultät"@de ;
+	rdfs:comment	"An academic institution"@en ,
+			"Eine akademische Einrichtung"@de .
+
+
+##### amsl #####
+
+amsl:expectedInvoiceMonth skos:prefLabel "Erwarteter Rechnungsmonat (veraltet!)"@de, "Expected invoice month (deprecated!)"@en .		
+
+
+
+##### Bibo #######
+
+
+bibo:issn
+    a  owl:DatatypeProperty ; 
+	rdfs:label	"ISSN (from ZDB)"@en,
+			"ISSN (aus ZDB)"@de ;
+	rdfs:domain bibo:Periodical .	#changed	
+
+bibo:Periodical
+	a		rdfs:Class ;
+	rdfs:subClassOf bibo:Document ;
+	rdfs:label	"Periodical"@en,
+			"Zeitschrift "@de ;
+	rdfs:isDefinedBy <http://purl.org/ontology/bibo/>  ;
+	rdfs:comment	"A periodical, e.g. a journal."@en,
+			"Ein fortlaufendes Sammelwerk, wie etwa eine Zeitschrift"@de .
+
+bibo:shortTitle
+	a		owl:DatatypeProperty ; 
+	rdfs:label	"Kurztitel"@de,
+			"short title"@en ;
+	rdfs:isDefinedBy <http://purl.org/ontology/bibo/> ;
+	rdfs:comment 	"The short (mostly abbreviated) title of a resource."@en ,
+			"Der Kurztitel einer Ressource."@de ;
+	rdfs:domain bibo:Document . 
+		
+
+
+
+ 
+##### Dublin Core #######
+ 		
+dc:publisher
+	a 		owl:ObjectProperty ; 
+	rdfs:label	"publisher"@en,
+			"Verlag"@de .
+
+dc:title
+	a		owl:DataTypeProperty ;
+	rdfs:label	"Titel"@de,
+			"title"@en .
+			
+dc:subject
+	a		rdf:Property ;
+	rdfs:label	"Schlagwort"@de,
+			"Subject"@en ;
+        rdfs:comment	"Ein Schlagwort beschreibt den Inhalt der Ressource. Kontrolliertes Vokabular empfohlen"@de,
+        		"The topic of the resource. Typically, the subject will be represented using keywords, key phrases, or classification codes. Controlled Vocabulary recommended."@en .			
+
+
+			
+##### Dublin Core Terms #######
+
+dct:created a owl:DatatypeProperty ; #hinzugefügt
+	rdfs:label "Date created"@en , "Erstellungsdatum"@de ;
+	rdfs:comment "Date of creation of the resource"@en , "Datum der Erstellung der Ressource."@de ;
+	rdfs:range xsd:dateTime . # hinzugefügt
+
+dct:creator
+	a		owl:ObjectProperty ;
+	dct:modified	"2010-10-11"^^xsd:date ;
+	rdfs:label	"has creator"@en,
+			"Hersteller"@de ;
+	rdfs:range	foaf:Organization ;
+
+	rdfs:comment	"An entity primarily responsible for making the resource. Examples of a Creator include a person, an organization, or a service."@en,
+			"Der Hersteller trägt die Hauptverantwortung für die Entstehung der ER. Beispiele für Hersteller sind Personen, Organisation oder Dienstleister."@de ;
+	rdfs:subPropertyOf dct:contributor,
+			dc:creator ;
+	owl:equivalentProperty foaf:maker ;
+	dct:issued 	"2008-01-14"^^xsd:date ;
+	dct:description "Examples of a Creator include a person, an organization, or a service."@en ;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+	dct:hasVersion <http://dublincore.org/usage/terms/history/#creatorT-002> .
+
+
+dct:description a owl:DatatypeProperty ; #hinzugefügt
+	rdfs:label "Description"@en , "Beschreibung"@de ;
+	rdfs:comment "An account of the resource."@en , "Eine Beschreibung des Inhaltes einer Ressource."@de .
+
+
+dct:format a owl:ObjectProperty ; #hinzugefügt
+	rdfs:label "Format"@en , "Format"@de ;
+	rdfs:comment "The file format, physical medium, or dimensions of the resource. Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME]."@en ;
+	rdfs:range dct:MediaTypeOrExtent .
+
+
+dct:MediaTypeOrExtent a rdfs:Class ;
+	rdfs:label "Media Type or Extent"@en , "Media Type"@de .
+
+
+dct:issued
+	a		owl:DataTypeProperty ;
+	rdfs:label	"aufgelegt"@de,
+			"issued"@en .
+
+dct:language
+	a		owl:DataTypeProperty ;
+	rdfs:label	"language"@en,
+			"Sprache"@de .
+
+			
+
+
+##### Foaf #######		
+
+foaf:Document a rdfs:Class ;
+rdfs:label "Dokument"@de , "Document"@en ;
+rdfs:comment "Klasse der Dokumente"@de , "Class of Documents"@en .	
+
+foaf:Organization
+	a		rdfs:Class ;
+	rdfs:label	"Organisation"@de ,
+			"organization "@en ;
+	rdfs:comment	"Diese Klasse beinhaltet Organisationen der Typen Bibliothek, Konsortium und Unternehmen"@de ,
+			"This Class contains organizations of the types library, consortium and enterprise"@en .
+
+foaf:Person
+	a		rdfs:Class ;
+	rdfs:label	"contact"@en ,
+			"Kontakt"@de ;
+	rdfs:comment	"A Person related with further Information, Links etc."@en ,
+			"Eine Person zu welcher weitere Kontaktinformationen, Verknüpfungen u.ä. gehören"@de .
+
+foaf:name	a		rdf:Property ,
+			owl:DatatypeProperty ;
+	rdfs:label	"Name (lobid-Import)"@de ,
+			"name (lobid import)"@en ;
+	rdfs:comment	"A name for something, e.g. for an organization. Read only from lobid imports"@en ,
+			"Ein Name für etwas, besipielsweise für eine Organisation. Nur lesend aus lobid-Importen"@de ;
+	rdfs:subPropertyOf rdfs:label .
+                                 
+
+
+##### Lobid #######			
+
+lobid:isil
+	rdfs:label	"Sigel (ISIL)"@de ,
+			"ISIL"@en ;
+	rdfs:comment 	"Bibliothekssigel im Format des ISIL"@de ,
+			"International Standard Identifier for Libraries and Related Organizations"@en .
+
+##### Sioc #######			
+
+sioc:Comment
+	a		owl:DataTypeProperty ;
+	rdfs:label	"Comment (Widget)"@en ,
+			"Kommentar (Widget)"@de .
+			
+
+
+#### Skos #####
+
+skos:altLabel a rdf:Property ;
+	rdfs:label "alternative Bezeichnung"@de , "alternative label"@en  .
+
+
+
+##### RDA Vocabulary #######
+
+
+
+##### Umbel #######			
+			
+
+umbel:isLike
+	a		owl:ObjectProperty ;
+	rdfs:label	"is like"@en ,
+			"ist analog zu"@de .
+			
+##### RDF #######			
+
+rdf:type
+	a		rdf:Property ;
+	rdfs:label	"Typ"@de ,
+			"type"@en ;
+	rdfs:comment	"Die Klasse einer Ressource"@de ,
+			"The class of a resource"@en .
+
+
+##### RDFS #######			
+			
+
+rdfs:comment
+	a		owl:DataTypeProperty ;
+	rdfs:label	"comment"@en ,
+			"Kommentar"@de .
+ 
+rdfs:label
+	a		owl:DatatypeProperty ;
+	rdfs:label	"Bezeichnung"@de ,
+			"Label"@en ;
+	rdfs:comment	"Die Bezeichnung einer Ressource"@de,
+			"The label of a resource"@en .
+
+rdfs:range
+	a		owl:ObjectProperty ;
+	rdfs:label	"Range"@en .
+
+
+
+##### Owl #######	
+
+owl:Ontology
+	rdfs:label	"Ontologie"@de ,
+			"ontology"@en .
+			
+owl:imports
+	a		owl:ObjectProperty ;
+	rdfs:label	"importiert"@de ,
+			"imports"@en .
+
+
+
+##### SysOnt #######
+
+sysont:prefix
+	 rdfs:label	"Prefix"@en,
+	 		"Präfix"@de .
+
+
+
+##### vCard #######
+
+vcard:country-name
+	a		owl:DatatypeProperty ;
+	rdfs:label	"country name"@en ,
+			"Land"@de ;
+	rdfs:range	xsd:string ;
+	rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+	rdfs:comment	"Der Name des Landes, das zur Adresse gehört"@de ,
+			"The country name associated with the address of the object"@en .
+
+vcard:email
+	a 		owl:ObjectProperty ;
+	rdfs:label	"E-Mail-Adresse (lobid-Import)"@de ,
+			"e-mail address (lobid import)"@en ;
+        rdfs:comment	"Die E-Mail-Adresse eines Kontaktes. Veraltet, nur lesend aus lobid-Importen."@de ,
+        		"The e-mail address of the contact. Deprecated, read only from lobid imports."@en ;
+        owl:equivalentProperty vcard:hasEmail .
+
+vcard:family-name
+	a		owl:DataTypeProperty ;
+	rdfs:label	"Familienname"@de ,
+			"family name"@en ;
+	rdfs:comment	"A persons family name"@en ,
+			"Der Familienname einer Person"@de .
+
+vcard:given-name
+	a		owl:DataTypeProperty ;
+	rdfs:label 	"given name"@en, "Vorname"@de ;
+	rdfs:comment 	"A person's given name"@en,
+			"Vorname einer Person"@de .
+
+vcard:hasEmail
+	a		owl:ObjectProperty ;
+	rdfs:label 	"E-Mail-Adresse"@de ,
+			"e-mail address"@en ;
+	rdfs:comment	"Die E-Mail-Adresse eines Kontaktes"@de ,
+			"The e-mail address of the contact"@en ;
+	owl:equivalentProperty vcard:email .
+	
+vcard:organization-name
+	a		owl:DataTypeProperty ;
+	rdfs:label	"Name der Organisation"@de ,
+			"name of organisation"@en ;
+	rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+	rdfs:range 	xsd:string .			
+
+
+vcard:role
+	a		owl:DataTypeProperty ;
+	rdfs:label 	"Funktion"@de ,
+			"role"@en ;
+	rdfs:comment	"Die Funktion eines Kontaktes"@de ,
+			"The responsibility assigned to the contact person (in general for electronic products)"@en ;
+	rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+	rdfs:range 	xsd:string .
+				
+
+vcard:hasTelephone
+	a		owl:ObjectProperty ;
+	rdfs:label	"phone number"@en ,
+			"Telefonnummer"@de ;
+	rdfs:comment 	"Die Telefonnummer eines Kontaktes"@de ,
+			"The phone number of the contact"@en .
+			
+vcard:hasURL a owl:ObjectProperty ;
+   	rdfs:label 	"URL"@de ,
+			"url"@en ;
+	rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+	rdfs:comment 	"Eine URL für ein Objekt, beispielsweise für die Website einer Ressource."@de ,
+			"The URL for an object, e.g. linking to the website of a ressource"@en ;
+	owl:equivalentProperty vcard:hasURL .  
+
+vcard:locality
+	a		owl:DatatypeProperty ;
+	rdfs:label	"locality"@en, "Ort"@de ;
+	rdfs:range	xsd:string ;
+	rdfs:comment	"Der zu einer Adresse gehörende Ort"@de ,
+			"The locality associated with the address"@en .
+
+vcard:postal-code
+	a		owl:DatatypeProperty ;
+	rdfs:label	"postal code"@en ,
+			"Postleitzahl"@de ;
+	rdfs:range 	xsd:string ;
+	rdfs:comment 	"Die Postleitzahl einer Adresse"@de ,
+			"The postal code associated with the address"@en .
+
+vcard:street-address
+	a		owl:DatatypeProperty ;
+	rdfs:label	"Straße"@de,
+			"street address"@en ;
+	rdfs:range	xsd:string ;
+	rdfs:comment	"Die zu einer Adresse gehörende Straße"@de ,
+			"The street address associated with the address"@en .
+
+vcard:url
+	a		owl:ObjectProperty ;
+	rdfs:label 	"URL (lobid-Import)"@de ,
+			"url (lobid import)"@en ;
+	rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+	rdfs:comment 	"Eine URL für ein Objekt, beispielsweise für die Website einer Ressource. Veraltet, nur lesend aus lobid-Importen"@de ,
+			"The URL for an object, e.g. linking to the website of a ressource. Deprecated, read only from lobid imports"@en ;
+	owl:equivalentProperty vcard:hasURL .
+
+
+
+### für Artikelindex
+
+dc:format a rdf:Property ;
+rdfs:label "Format"@de , "format"@en ;
+rdfs:range amsl:BibliographicMimeType . #hinzugefügt
+#	Wenn dct:format genutzt würde, gäbe es die range dct:MediaTypeOrExtent, als deren Unterklasse amsl:BibliographicMimeType angesehen werden könnte.
+
+
+<urn:mimetype:application/marc> a amsl:BibliographicMimeType; 
+rdfs:label "MARC"@de, "MARC"@en .
+
+<urn:mimetype:application/marcxml+xml> a amsl:BibliographicMimeType;
+rdfs:label "MARCXML"@de, "MARCXML"@en .
+
+
+
+
+
+gr:DeliveryMethod a owl:Class ;
+	owl:oneOf (amsl:DownloadHTTP amsl:DownloadFTP amsl:DownloadOAI amsl:DownloadAPI) ;
+    rdfs:label "Zustellungsmethode"@de, "Delivery Method"@en ;
+    rdfs:comment "A delivery method is a standardized procedure for transferring the product or service to the destination of fulfilment chosen by the customer."@en ;
+    rdfs:isDefinedBy <http://purl.org/goodrelations/v1> .
+
+    
+
+
+gr:availableDeliveryMethods a owl:ObjectProperty ;
+    rdfs:label "verfügbare Zustellungsmethoden"@de, "available delivery methods"@en ;
+    rdfs:comment "This specifies the gr:DeliveryMethod or methods available for a given gr:Offering."@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (gr:Offering
+            <http://schema.org/Offer>
+        )
+    ] ;
+    rdfs:isDefinedBy <http://purl.org/goodrelations/v1> ;
+    rdfs:range gr:DeliveryMethod .
+
+                                 
+                                 

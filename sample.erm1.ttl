@@ -1,0 +1,1020 @@
+# Exported with the Erfurt API - http://aksw.org/Projects/Erfurt
+
+@base <http://demo.amsl.technology/erm/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix amsl: <http://vocab.ub.uni-leipzig.de/amsl/> .
+@prefix geonames: <http://www.geonames.org/ontology#> .
+@prefix ns8: <http://purl.org/ontology/daia/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns4: <http://purl.org/ontology/bibo/> .
+@prefix ns10: <http://ns.ontowiki.net/SysBase/> .
+@prefix ns11: <http://rdaregistry.info/> .
+@prefix sioct: <http://rdfs.org/sioc/types#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns2: <http://www.w3.org/2006/vcard/ns#> .
+@prefix ns5: <http://rdvocab.info/> .
+@prefix ns3: <http://umbel.org/umbel#> .
+@prefix ns6: <http://purl.org/lobid/lv#> .
+@prefix ns12: <http://example.com/> .
+@prefix ns7: <http://www.w3.org/ns/org#> .
+@prefix ns9: <http://purl.org/ontology/mo/> .
+@prefix item: <http://demo.amsl.technology/erm1/resource/item/fe3dae963a10992c14e83e2b24068ecf/> .
+@prefix ns0: <http://rdaregistry.info/Elements/u/> .
+
+<http://demo.amsl.technology/sample-data/erm1/> a owl:Ontology ;
+   rdfs:label "Lokales ERM 1"@de, "Local ERM 1"@en ;
+   owl:imports <http://amsl.technology/config/erm/>, <http://demo.amsl.technology/sample-data/consortialcontracts/> ;
+   rdfs:comment "Diese Wissensbasis dient der Verwaltung lokaler Informationen, z. B. Verträge, Pakete, Vertragspositionen, Budgets, Fakultäten"@de .
+
+<http://demo.amsl.technology/erm/Budget/Datenbanken> a amsl:Budget ;
+                                                              rdfs:label "Datenbanken" ;
+                                                              rdfs:comment "Datenbanken, fakultätsübergreifend" ;
+                                                              amsl:budgetAbbr "db" .
+
+<http://demo.amsl.technology/erm/Budget/EJournals> a amsl:Budget ;
+                                                            rdfs:label "E-Journals" ;
+                                                            rdfs:comment "E-Journals, fakultätsübergreifend" ;
+                                                            amsl:budgetAbbr "ejrnl" .
+
+<http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> a amsl:LicensePackage ;
+                                                                               dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                               rdfs:label "Chemische Journals Grundpaket (2014)" ;
+                                                                               amsl:contractContainingPackage <http://demo.amsl.technology/erm/Vertragsjahresdaten/Musterhafte_Chemie_Journals_2014> .
+
+<http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> a amsl:LicensePackage ;
+                                                                                 dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                 rdfs:label "Chemische Journals Grundpaket (2015)" ;
+                                                                                 amsl:contractContainingPackage <http://demo.amsl.technology/erm/Vertragsjahresdaten/Musterhafte_Chemie_Journals_2015> .
+
+<http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket> a amsl:LicensePackage ;
+                                                                                dct:created "2015-01-20T10:33:04Z"^^xsd:dateTime ;
+                                                                                rdfs:label "Chemische Journals Zusatzpaket (2014)" ;
+                                                                                amsl:contractContainingPackage <http://demo.amsl.technology/erm/Vertragsjahresdaten/Musterhafte_Chemie_Journals_2014> .
+
+<http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket/1> a amsl:LicensePackage ;
+                                                                                  dct:created "2015-01-20T10:52:40Z"^^xsd:dateTime ;
+                                                                                  rdfs:label "Chemische Journals Zusatzpaket (2015)" ;
+                                                                                  amsl:contractContainingPackage <http://demo.amsl.technology/erm/Vertragsjahresdaten/Musterhafte_Chemie_Journals_2015> .
+
+<http://demo.amsl.technology/erm/Plattform/DBOD> a amsl:Platform ;
+                                                          rdfs:label "DBOD" ;
+                                                          amsl:shibbolethImplStatus amsl:Impossible ;
+                                                          ns2:hasURL <http://dbod.de> .
+
+<http://demo.amsl.technology/erm/Plattform/EJournals_direkt> a amsl:Platform ;
+                                                                      rdfs:label "E-Journals direkt" ;
+                                                                      amsl:shibbolethImplStatus amsl:Implemented ;
+                                                                      ns2:hasURL <http://ejournalsdirect.com> .
+
+<http://demo.amsl.technology/erm/Vertragsbasisdaten/Datenbank_mittelalterliche_Geschichte> a amsl:BasicContractData ;
+                                                                                                    rdfs:label "Datenbank mittelalterliche Geschichte" ;
+                                                                                                    amsl:initialAcquisitionDate "2012-06-01"^^xsd:date ;
+                                                                                                    amsl:description "Umfassende Datenbank mit 30 Mio. Einträgen zur europäischen Geschichte im Mittelalter. DVD-Ausgabe, DBoD-Zugang" ;
+                                                                                                    amsl:internalContact <http://demo.amsl.technology/consortial/Kontakt_konsortial/Maja_Musterhausen_Fachref_Geschichte> ;
+                                                                                                    amsl:licensor <http://demo.amsl.technology/consortial/Organisation_konsortial/ABC_Verlag> ;
+                                                                                                    dct:creator <http://demo.amsl.technology/consortial/Organisation_konsortial/ABC_Verlag> ;
+                                                                                                    amsl:licensee <http://demo.amsl.technology/consortial/Organisation_konsortial/UB_Musterstadt> ;
+                                                                                                    amsl:acqMethod amsl:Purchase ;
+                                                                                                    amsl:localSystemNumber "987654321" ;
+                                                                                                    amsl:coursePackP amsl:ProhibitedInterpreted ;
+                                                                                                    amsl:courseReserveE amsl:SilentUninterpreted ;
+                                                                                                    amsl:pCopy amsl:PermittedInterpreted ;
+                                                                                                    amsl:digitallyCopy amsl:ProhibitedExplicit ;
+                                                                                                    amsl:erType amsl:Database ;
+                                                                                                    amsl:authMethod amsl:LandP ;
+                                                                                                    amsl:scholarlySharing amsl:PermittedInterpreted ;
+                                                                                                    amsl:platform <http://demo.amsl.technology/erm/Plattform/DBOD> ;
+                                                                                                    amsl:coursePackE amsl:SilentUninterpreted ;
+                                                                                                    amsl:courseReserveP amsl:PermittedExplicit .
+
+<http://demo.amsl.technology/erm/Vertragsbasisdaten/Musterhafte_Chemie_Journals> a amsl:BasicContractData ;
+                                                                                          rdfs:label "Musterhafte Chemie Journals" ;
+                                                                                          amsl:initialAcquisitionDate "2014-01-01"^^xsd:date ;
+                                                                                          amsl:description "42 Chemie-Journals für musterhafte Forschungen" ;
+                                                                                          amsl:internalContact <http://demo.amsl.technology/consortial/Kontakt_konsortial/Helga_von_Muster_DiplBibl> ;
+                                                                                          amsl:licensor <http://demo.amsl.technology/consortial/Organisation_konsortial/ABC_Verlag> ;
+                                                                                          dct:creator <http://demo.amsl.technology/consortial/Organisation_konsortial/ABC_Verlag> ;
+                                                                                          amsl:licensee <http://demo.amsl.technology/consortial/Organisation_konsortial/UB_Musterstadt> ;
+                                                                                          amsl:acqMethod amsl:ConsortialLicense ;
+                                                                                          amsl:localSystemNumber "12345678" ;
+                                                                                          amsl:coursePackP amsl:SilentUninterpreted ;
+                                                                                          amsl:courseReserveE amsl:PermittedInterpreted ;
+                                                                                          amsl:pCopy amsl:PermittedExplicit ;
+                                                                                          amsl:digitallyCopy amsl:PermittedInterpreted ;
+                                                                                          amsl:erType amsl:EjournalPackage ;
+                                                                                          amsl:authMethod amsl:Shibboleth ;
+                                                                                          amsl:scholarlySharing amsl:PermittedExplicit ;
+                                                                                          amsl:platform <http://demo.amsl.technology/erm/Plattform/EJournals_direkt> ;
+                                                                                          amsl:coursePackE amsl:SilentUninterpreted ;
+                                                                                          amsl:courseReserveP amsl:PermittedExplicit ;
+                                                                                          amsl:concUser "unbegrenzt" ;
+                                                                                          amsl:erStatus amsl:Active ;
+                                                                                          amsl:erAltTitle "Chemie Journals, musterhaft", "Chemical Journals" ;
+                                                                                          amsl:hasRemoteAccess amsl:Yes ;
+                                                                                          amsl:expectedInvoiceMonth amsl:November .
+
+<http://demo.amsl.technology/erm/Vertragsbasisdaten/Physik_Musterjournal> a amsl:BasicContractData ;
+                                                                                   rdfs:label "Physik Musterjournal" ;
+                                                                                   amsl:initialAcquisitionDate "2007-01-01"^^xsd:date ;
+                                                                                   amsl:description "Das große Physik-Journal" ;
+                                                                                   amsl:internalContact <http://demo.amsl.technology/consortial/Kontakt_konsortial/Helga_von_Muster_DiplBibl> ;
+                                                                                   amsl:licensor <http://demo.amsl.technology/consortial/Organisation_konsortial/ABC_Verlag> ;
+                                                                                   dct:creator <http://demo.amsl.technology/consortial/Organisation_konsortial/ABC_Verlag> ;
+                                                                                   amsl:licensee <http://demo.amsl.technology/consortial/Organisation_konsortial/UB_Musterstadt> ;
+                                                                                   amsl:acqMethod amsl:DedicatedLicense ;
+                                                                                   amsl:localSystemNumber "987654321" ;
+                                                                                   amsl:coursePackP amsl:ProhibitedInterpreted ;
+                                                                                   amsl:courseReserveE amsl:SilentUninterpreted ;
+                                                                                   amsl:pCopy amsl:PermittedInterpreted ;
+                                                                                   amsl:digitallyCopy amsl:ProhibitedExplicit ;
+                                                                                   amsl:erType amsl:Ejournal ;
+                                                                                   amsl:authMethod amsl:Shibboleth ;
+                                                                                   amsl:scholarlySharing amsl:PermittedInterpreted ;
+                                                                                   amsl:platform <http://demo.amsl.technology/erm/Plattform/EJournals_direkt> ;
+                                                                                   amsl:coursePackE amsl:SilentUninterpreted ;
+                                                                                   amsl:courseReserveP amsl:PermittedExplicit ;
+                                                                                   amsl:erAltTitle "Physikjournal" .
+
+<http://demo.amsl.technology/erm/Vertragsjahresdaten/Datenbank_mittelalterliche_Geschichte_Kauf> a amsl:AnnualContractData ;
+                                                                                                          rdfs:label "Datenbank mittelalterliche Geschichte (Kauf)" ;
+                                                                                                          amsl:linkToInvoice "V://emedien/rechnungen/rechnung0123" ;
+                                                                                                          amsl:invoiceDate "2012-06-15"^^xsd:date ;
+                                                                                                          amsl:licenseStartDate "2012-06-01"^^xsd:date ;
+                                                                                                          amsl:licenseType amsl:NetworkIndependent ;
+                                                                                                          amsl:externalContact <http://demo.amsl.technology/consortial/Kontakt_konsortial/Herbert_Musterhoff> ;
+                                                                                                          amsl:linkToContract "V://emedien/vertraege/vertraege0123" ;
+                                                                                                          amsl:budget <http://demo.amsl.technology/erm/Budget/Datenbanken> ;
+                                                                                                          amsl:basicContractData <http://demo.amsl.technology/erm/Vertragsbasisdaten/Datenbank_mittelalterliche_Geschichte> ;
+                                                                                                          amsl:invoiceReceived amsl:Yes ;
+                                                                                                          amsl:paymentPeriod amsl:PaymentInLicensingYear ;
+                                                                                                          amsl:invoicePriceGrossEUR "432,10" .
+
+<http://demo.amsl.technology/erm/Vertragsjahresdaten/Musterhafte_Chemie_Journals_2014> a amsl:AnnualContractData ;
+                                                                                                rdfs:label "Musterhafte Chemie Journals 2014" ;
+                                                                                                amsl:linkToInvoice "V://emedien/rechnungen/rechnung12345" ;
+                                                                                                amsl:expectedPrice "1234,56" ;
+                                                                                                amsl:invoiceDate "2014-11-21"^^xsd:date ;
+                                                                                                amsl:licenseStartDate "2014-01-01"^^xsd:date ;
+                                                                                                amsl:licenseEndDate "2014-12-31"^^xsd:date ;
+                                                                                                amsl:terminationAlert "2014-09-30"^^xsd:date ;
+                                                                                                amsl:licenseType amsl:Campus ;
+                                                                                                amsl:externalContact <http://demo.amsl.technology/consortial/Kontakt_konsortial/Herbert_Musterhoff> ;
+                                                                                                amsl:licensingAgent <http://demo.amsl.technology/consortial/Organisation_konsortial/MusterLieferant> ;
+                                                                                                amsl:linkToContract "V://emedien/vertraege/vertrag12345" ;
+                                                                                                amsl:noticePeriod "3 Monate vor Vertragsende" ;
+                                                                                                amsl:consortium <http://demo.amsl.technology/consortial/Organisation_konsortial/Musterland_Konsortium> ;
+                                                                                                amsl:budget <http://demo.amsl.technology/erm/Budget/EJournals> ;
+                                                                                                amsl:basicContractData <http://demo.amsl.technology/erm/Vertragsbasisdaten/Musterhafte_Chemie_Journals> ;
+                                                                                                amsl:invoiceReceived amsl:Yes ;
+                                                                                                amsl:expectedPriceFollowingYear "1234,56" ;
+                                                                                                amsl:paymentPeriod amsl:PaymentInLicensingYear ;
+                                                                                                amsl:invoicePriceGrossEUR "1234,56" ;
+                                                                                                amsl:invoicePriceNetEUR "1037,45" ;
+                                                                                                amsl:invoicePriceNetUSD "1202,48" .
+
+<http://demo.amsl.technology/erm/Vertragsjahresdaten/Musterhafte_Chemie_Journals_2015> a amsl:AnnualContractData ;
+                                                                                                rdfs:label "Musterhafte Chemie Journals 2015" ;
+                                                                                                amsl:expectedPrice "1234,56" ;
+                                                                                                amsl:licenseStartDate "2015-01-01"^^xsd:date ;
+                                                                                                amsl:licenseEndDate "2015-12-31"^^xsd:date ;
+                                                                                                amsl:terminationAlert "2015-09-30"^^xsd:date ;
+                                                                                                amsl:licenseType amsl:Campus ;
+                                                                                                amsl:externalContact <http://demo.amsl.technology/consortial/Kontakt_konsortial/Herbert_Musterhoff> ;
+                                                                                                amsl:licensingAgent <http://demo.amsl.technology/consortial/Organisation_konsortial/MusterLieferant> ;
+                                                                                                amsl:linkToContract "V://emedien/vertraege/vertrag12345" ;
+                                                                                                amsl:noticePeriod "3 Monate vor Vertragsende" ;
+                                                                                                amsl:consortium <http://demo.amsl.technology/consortial/Organisation_konsortial/Musterland_Konsortium> ;
+                                                                                                amsl:budget <http://demo.amsl.technology/erm/Budget/EJournals> ;
+                                                                                                amsl:basicContractData <http://demo.amsl.technology/erm/Vertragsbasisdaten/Musterhafte_Chemie_Journals> ;
+                                                                                                amsl:invoiceReceived amsl:No ;
+                                                                                                amsl:expectedPriceFollowingYear "1567,89" ;
+                                                                                                amsl:paymentPeriod amsl:PaymentInLicensingYear .
+
+<http://demo.amsl.technology/erm/Vertragsjahresdaten/Physik_MusterJournal_2015> a amsl:AnnualContractData ;
+                                                                                         rdfs:label "Physik Muster-Journal 2015" ;
+                                                                                         amsl:expectedPrice "234,56" ;
+                                                                                         amsl:licenseStartDate "2015-01-01"^^xsd:date ;
+                                                                                         amsl:licenseEndDate "2015-12-31"^^xsd:date ;
+                                                                                         amsl:terminationAlert "2015-12-13"^^xsd:date ;
+                                                                                         amsl:licenseType amsl:CampusWithoutVPN ;
+                                                                                         amsl:externalContact <http://demo.amsl.technology/consortial/Kontakt_konsortial/Herbert_Musterhoff> ;
+                                                                                         amsl:licensingAgent <http://demo.amsl.technology/consortial/Organisation_konsortial/MusterLieferant> ;
+                                                                                         amsl:linkToContract "V://emedien/vertraege/vertrag12345" ;
+                                                                                         amsl:noticePeriod "3 Wochen vor Vertragsende" ;
+                                                                                         amsl:consortium <http://demo.amsl.technology/consortial/Organisation_konsortial/Musterland_Konsortium> ;
+                                                                                         amsl:budget <http://demo.amsl.technology/erm/Budget/EJournals> ;
+                                                                                         amsl:basicContractData <http://demo.amsl.technology/erm/Vertragsbasisdaten/Physik_Musterjournal> ;
+                                                                                         amsl:invoiceReceived amsl:No ;
+                                                                                         amsl:expectedPriceFollowingYear "234,56" ;
+                                                                                         amsl:paymentPeriod amsl:PaymentInAdvance .
+
+<http://demo.amsl.technology/erm/resource/item/66544539a851408c703784381e403ee6/1520-5045> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:33:04Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Industrial and Engineering Chemistry Research (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5045> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0888-5885> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/66544539a851408c703784381e403ee6/1520-510X> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:33:04Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Inorganic Chemistry (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-510X> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0020-1669> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/66544539a851408c703784381e403ee6/1520-5118> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:33:04Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Agricultural and Food Chemistry (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5118> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0021-8561> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/66544539a851408c703784381e403ee6/1520-5134> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:33:04Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Chemical & Engineering Data (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5134> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0021-9568> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/66544539a851408c703784381e403ee6/1520-5142> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:33:04Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Chemical Information and Modeling (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5142> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0095-2338> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/66544539a851408c703784381e403ee6/1541-4833> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:33:04Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Industrial and Engineering Chemistry Fundamentals (1962 - 1986) (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1541-4833> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0196-4313> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/66544539a851408c703784381e403ee6/1541-4841> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:33:04Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Industrial and Engineering Chemistry Product Research and Development (1962 - 1986; Formerly: I & EC Product Research and Development; Product R & D) (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1541-4841> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0091-1968> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/66544539a851408c703784381e403ee6/1541-5716> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:33:04Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Industrial and Engineering Chemistry Process Design and Development (1962 - 1986) (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1541-5716> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0196-4305> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/66544539a851408c703784381e403ee6/1541-5724> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:33:04Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Industrial and Engineering Chemistry (formerly: Journal of Industrial and Engineering Chemistry; Industrial Edition; International Edition) (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1541-5724> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0019-7866> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/96c0624b8f5d8d802f72a20951f22989/1520-5045> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:52:40Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Industrial and Engineering Chemistry Research (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5045> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0888-5885> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/96c0624b8f5d8d802f72a20951f22989/1520-510X> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:52:40Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Inorganic Chemistry (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-510X> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0020-1669> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/96c0624b8f5d8d802f72a20951f22989/1520-5118> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:52:40Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Agricultural and Food Chemistry (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5118> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0021-8561> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/96c0624b8f5d8d802f72a20951f22989/1520-5134> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:52:40Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Chemical & Engineering Data (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5134> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0021-9568> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/96c0624b8f5d8d802f72a20951f22989/1520-5142> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:52:40Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Chemical Information and Modeling (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5142> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0095-2338> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/96c0624b8f5d8d802f72a20951f22989/1541-4833> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:52:40Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Industrial and Engineering Chemistry Fundamentals (1962 - 1986) (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1541-4833> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0196-4313> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/96c0624b8f5d8d802f72a20951f22989/1541-4841> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:52:40Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Industrial and Engineering Chemistry Product Research and Development (1962 - 1986; Formerly: I & EC Product Research and Development; Product R & D) (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1541-4841> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0091-1968> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/96c0624b8f5d8d802f72a20951f22989/1541-5716> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:52:40Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Industrial and Engineering Chemistry Process Design and Development (1962 - 1986) (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1541-5716> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0196-4305> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/96c0624b8f5d8d802f72a20951f22989/1541-5724> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:52:40Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Industrial and Engineering Chemistry (formerly: Journal of Industrial and Engineering Chemistry; Industrial Edition; International Edition) (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1541-5724> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0019-7866> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Zusatzpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-4774> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Combinatorial Chemistry (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-4774> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1520-4766> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-4804> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Medicinal Chemistry (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-4804> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0022-2623> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-4812> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Bioconjugate Chemistry (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-4812> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1043-1802> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-4898> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Accounts of Chemical Research (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-4898> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0001-4842> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-4995> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Biochemistry (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-4995> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0006-2960> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-5002> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Chemistry of Materials (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5002> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0897-4756> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-5010> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Chemical Research in Toxicology (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5010> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0893-228X> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-5029> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Energy & Fuels (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5029> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0887-0624> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-5126> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of the American Chemical Society (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5126> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0002-7863> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-5207> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Physical Chemistry B (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5207> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1089-5647> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-5215> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Physical Chemistry,  A (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5215> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1089-5639> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-5827> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Langmuir (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5827> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0743-7463> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-5835> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Macromolecules (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5835> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0024-9297> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-5851> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Environmental Science & Technology (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5851> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0013-936X> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-586X> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Organic Process Research & Development (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-586X> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1083-6160> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-6025> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Natural Products (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-6025> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0163-3864> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-6041> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Organometallics (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-6041> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0276-7333> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-6882> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Analytical Chemistry (formerly: Industrial and engineering chemistry / Analytical edition) (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-6882> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0003-2700> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-6890> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Chemical Reviews (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-6890> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0009-2665> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1520-6904> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Organic Chemistry, The (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-6904> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0022-3263> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1523-7052> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Organic Letters (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1523-7052> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1523-7060> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1526-4602> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Biomacromolecules (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1526-4602> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1525-7797> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1528-7505> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Crystal Growth & Design (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1528-7505> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1528-7483> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1530-6992> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Nano Letters (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1530-6992> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1530-6984> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1535-3907> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Proteome Research (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1535-3907> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1535-3893> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1541-5740> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Physical Chemistry, The (1896-1996) (1947-1951: Journal of Physical and Colloid Chemistry) (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1541-5740> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0022-3654> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1543-8392> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Molecular Pharmaceutics (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1543-8392> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1543-8384> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1549-9626> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Chemical Theory and Computation (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1549-9626> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1549-9618> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1554-8937> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Chemical Biology (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1554-8937> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1554-8929> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1932-7455> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Physical Chemistry C (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1932-7455> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1932-7447> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1936-086X> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Nano (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1936-086X> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1936-0851> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1944-8252> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Applied Materials & Interfaces (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1944-8252> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1944-8244> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1948-5875> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Medicinal Chemistry Letters (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1948-5875> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1948-7185> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Physical Chemistry Letters, The (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1948-7185> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/1948-7193> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Chemical Neuroscience (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1948-7193> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/2155-5435> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Catalysis (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:2155-5435> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/2161-1653> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Macro Letters (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:2161-1653> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/2161-5063> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Synthetic Biology (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:2161-5063> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/2168-0485> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Sustainable Chemistry & Engineering (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:2168-0485> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/2328-8930> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Environmental Science & Technology Letters (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:2328-8930> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/c8793245f2c9827a48b83ffc6b4becca/2330-4022> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:29:59Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Photonics (2014)" ;
+                                                                                                    amsl:eissn <urn:ISSN:2330-4022> ;
+                                                                                                    amsl:itemPrice "123.45"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-4774> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Combinatorial Chemistry (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-4774> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1520-4766> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-4804> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Medicinal Chemistry (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-4804> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0022-2623> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-4812> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Bioconjugate Chemistry (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-4812> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1043-1802> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-4898> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Accounts of Chemical Research (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-4898> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0001-4842> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-4995> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Biochemistry (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-4995> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0006-2960> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-5002> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Chemistry of Materials (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5002> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0897-4756> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-5010> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Chemical Research in Toxicology (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5010> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0893-228X> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-5029> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Energy & Fuels (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5029> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0887-0624> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-5126> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of the American Chemical Society (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5126> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0002-7863> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-5207> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Physical Chemistry B (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5207> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1089-5647> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-5215> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Physical Chemistry,  A (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5215> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1089-5639> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-5827> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Langmuir (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5827> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0743-7463> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-5835> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Macromolecules (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5835> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0024-9297> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-5851> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Environmental Science & Technology (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-5851> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0013-936X> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-586X> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Organic Process Research & Development (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-586X> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1083-6160> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-6025> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Natural Products (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-6025> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0163-3864> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-6041> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Organometallics (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-6041> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0276-7333> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-6882> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Analytical Chemistry (formerly: Industrial and engineering chemistry / Analytical edition) (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-6882> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0003-2700> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-6890> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Chemical Reviews (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-6890> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0009-2665> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1520-6904> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Organic Chemistry, The (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1520-6904> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0022-3263> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1523-7052> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Organic Letters (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1523-7052> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1523-7060> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1526-4602> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Biomacromolecules (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1526-4602> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1525-7797> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1528-7505> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Crystal Growth & Design (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1528-7505> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1528-7483> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1530-6992> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Nano Letters (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1530-6992> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1530-6984> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1535-3907> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Proteome Research (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1535-3907> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1535-3893> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1541-5740> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Physical Chemistry, The (1896-1996) (1947-1951: Journal of Physical and Colloid Chemistry) (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1541-5740> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:0022-3654> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1543-8392> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Molecular Pharmaceutics (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1543-8392> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1543-8384> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1549-9626> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Chemical Theory and Computation (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1549-9626> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1549-9618> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1554-8937> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Chemical Biology (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1554-8937> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1554-8929> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1932-7455> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Physical Chemistry C (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1932-7455> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1932-7447> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1936-086X> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Nano (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1936-086X> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1936-0851> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1944-8252> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Applied Materials & Interfaces (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1944-8252> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:pissn <urn:ISSN:1944-8244> ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1948-5875> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Medicinal Chemistry Letters (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1948-5875> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1948-7185> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Journal of Physical Chemistry Letters, The (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1948-7185> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/1948-7193> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Chemical Neuroscience (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:1948-7193> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/2155-5435> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Catalysis (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:2155-5435> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/2161-1653> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Macro Letters (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:2161-1653> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/2161-5063> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Synthetic Biology (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:2161-5063> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/2168-0485> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Sustainable Chemistry & Engineering (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:2168-0485> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/2328-8930> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "Environmental Science & Technology Letters (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:2328-8930> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://demo.amsl.technology/erm/resource/item/fced0fda6cf1b1dd52b49d3f70a566de/2330-4022> a amsl:ContractItem ;
+                                                                                                    dct:created "2015-01-20T10:51:11Z"^^xsd:dateTime ;
+                                                                                                    rdfs:label "ACS Photonics (2015)" ;
+                                                                                                    amsl:eissn <urn:ISSN:2330-4022> ;
+                                                                                                    amsl:itemPrice "543.21"^^xsd:decimal ;
+                                                                                                    amsl:contractItemOf <http://demo.amsl.technology/erm/Paket/Chemische_Journals_Grundpaket/1> .
+
+<http://ld.zdb-services.de/resource/2026397-1> a ns4:Periodical ;
+                                               owl:sameAs <http://hub.culturegraph.org/resource/DNB-020865988>, <http://lobid.org/resource/ZDB2026397-1> ;
+                                               ns4:coden "JMETD" ;
+                                               foaf:isPrimaryTopicOf "http://search.ebscohost.com/", "http://jme.bmj.com/content/by/year", "http://jme.bmj.com/", "http://www.jstor.org/action/showPublication?journalCode=jmedethics", "http://www.ncbi.nlm.nih.gov/pmc/journals/168/", "http://www.bibliothek.uni-regensburg.de/ezeit/?2026397" ;
+                                               dc:identifier "(DE-101)020865988", "(OColc)645312437", "(DE-600)2026397-1" ;
+                                               dct:issued "1975-" ;
+                                               ns4:issn "1473-4257" ;
+                                               dc:publisher "JSTOR", "BMJ Publ." ;
+                                               dct:medium <http://rdvocab.info/termList/RDACarrierType/1018> ;
+                                               dc:relation <http://ld.zdb-services.de/data/194927-5> ;
+                                               dct:subject <http://d-nb.info/gnd/4067488-5>, <http://d-nb.info/gnd/4074672-0> ;
+                                               dct:isFormatOf <http://ld.zdb-services.de/resource/194927-5> ;
+                                               dct:language <http://id.loc.gov/vocabulary/iso639-2/eng> ;
+                                               dc:title "Journal of medical ethics" ;
+                                               ns4:shortTitle "J. Med. Ethics" ;
+                                               dct:alternative "JME online" ;
+                                               ns0:P60163 "New York, NY", "London" ;
+                                               ns0:P60333 "New York, NY : JSTOR, 1975", "London : BMJ Publ., 1975", "New York, NY : BMJ Publ., 1975" ;
+                                               ns0:P60493 "JME online" .
+
+<urn:ISSN:1473-4257> ns3:isLike <http://ld.zdb-services.de/resource/2026397-1>, <http://ld.zdb-services.de/resource/194927-5> .

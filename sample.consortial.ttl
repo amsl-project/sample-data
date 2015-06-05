@@ -1,0 +1,120 @@
+# Exported with the Erfurt API - http://aksw.org/Projects/Erfurt
+
+@base <http://demo.amsl.technology/consortial/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix amsl: <http://vocab.ub.uni-leipzig.de/amsl/> .
+@prefix geonames: <http://www.geonames.org/ontology#> .
+@prefix ns8: <http://purl.org/ontology/daia/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns5: <http://rdvocab.info/> .
+@prefix ns3: <http://www.w3.org/ns/org#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix ns2: <http://purl.org/lobid/lv#> .
+@prefix ns4: <http://ns.ontowiki.net/SysBase/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix ns0: <http://www.w3.org/2006/vcard/ns#> .
+@prefix ns1: <http://creativecommons.org/ns#> .
+
+<http://demo.amsl.technology/sample-data/consortial/> a owl:Ontology ;
+   rdfs:label "Konsortiale Organisationsverwaltung"@de , "Consortial Organization Management"@en ;
+   owl:imports <http://amsl.technology/config/consortial/>  ;
+   rdfs:comment "Diese Wissensbasis dient der Verwaltung von Organisationen und Kontaktpersonen sowie der dazugehörigen Informationen wie z.B. Adressdaten"@de, " This knowledge base is used to manage Organisations and contact persons including associated information like adress data"@en .
+
+<Comment54be0a77dda3d> a <http://rdfs.org/sioc/types#Comment> ;
+                       dct:created "2015-01-20T08:57:43+01:00"^^xsd:dateTime ;
+                       sioc:content "Noch zurückrufen bzgl. Konferenzbeitrag" ;
+                       sioc:has_creator sysont:SuperAdmin ;
+                       sioc:about <http://demo.amsl.technology/consortial/Kontakt_konsortial/Helga_von_Muster_DiplBibl> .
+
+<http://demo.amsl.technology/consortial/Kontakt_konsortial/Helga_von_Muster_DiplBibl> a foaf:Person ;
+                                                                                               rdfs:label "Helga von Muster, Dipl.-Bibl." ;
+                                                                                               amsl:isMemberOf <http://demo.amsl.technology/consortial/Organisation_konsortial/UB_Musterstadt>, <http://demo.amsl.technology/consortial/Organisation_konsortial/Musterland_Konsortium> ;
+                                                                                               ns0:given-name "Helga" ;
+                                                                                               ns0:hasEmail <mailto:muster@ub.musteruni.de>, <mailto:muster@konsortium-musterland.de> ;
+                                                                                               ns0:hasTelephone <tel:01234567800> ;
+                                                                                               ns0:postal-code "12345" ;
+                                                                                               ns0:locality "Musterstadt" ;
+                                                                                               ns0:family-name "Muster, von" ;
+                                                                                               ns0:street-address "Musterstraße 3" ;
+                                                                                               ns0:role "Ansprechpartnerin Konsortialverträge; ERM-Bibliothekarin UB Musterstadt" .
+
+<http://demo.amsl.technology/consortial/Kontakt_konsortial/Herbert_Musterhoff> a foaf:Person ;
+                                                                                        rdfs:label "Herbert Musterhoff" ;
+                                                                                        amsl:isMemberOf <http://demo.amsl.technology/consortial/Organisation_konsortial/MusterLieferant> ;
+                                                                                        ns0:given-name "Herbert" ;
+                                                                                        ns0:hasEmail <mailto:musterhoffh@lieferanten-muster.de> ;
+                                                                                        ns0:hasTelephone <tel:012345678> ;
+                                                                                        amsl:contactNote "Freitags nicht im Haus" ;
+                                                                                        ns0:postal-code "12345" ;
+                                                                                        ns0:locality "Musterstadt" ;
+                                                                                        ns0:family-name "Musterhoff" ;
+                                                                                        ns0:street-address "Musterstraße 4" ;
+                                                                                        ns0:role "Kundensupport E-Medien" .
+
+<http://demo.amsl.technology/consortial/Kontakt_konsortial/Maja_Musterhausen_Fachref_Geschichte> a foaf:Person ;
+                                                                                                          rdfs:label "Maja Musterhausen, Fachref. Geschichte" ;
+                                                                                                          amsl:isMemberOf <http://demo.amsl.technology/consortial/Organisation_konsortial/UB_Musterstadt> ;
+                                                                                                          ns0:given-name "Maja" ;
+                                                                                                          ns0:hasEmail <mailto:musterhausen@ub.musteruni.de> ;
+                                                                                                          ns0:hasTelephone <tel:01234567801> ;
+                                                                                                          ns0:postal-code "12345" ;
+                                                                                                          ns0:locality "Musterstadt" ;
+                                                                                                          ns0:family-name "Musterhausen" ;
+                                                                                                          ns0:street-address "Musterstraße 3" ;
+                                                                                                          ns0:role "Fachreferentin Geschichte" .
+
+<http://demo.amsl.technology/consortial/Organisation_konsortial/ABC_Verlag> a foaf:Organization ;
+                                                                                     rdfs:label "ABC Verlag" ;
+                                                                                     ns0:hasEmail <mailto:info@abc-verlag.de> ;
+                                                                                     ns0:hasTelephone <tel:012345678> ;
+                                                                                     amsl:organizationType amsl:Enterprise ;
+                                                                                     amsl:orgNote "Insbesondere E-Journals" ;
+                                                                                     ns0:postal-code "12345" ;
+                                                                                     ns0:locality "Musterstadt" ;
+                                                                                     ns0:street-address "Musterstr. 1" ;
+                                                                                     ns0:hasURL <http://www.abc-verlag.de> ;
+                                                                                     ns0:organization-name "ABC Verlags GmbH" .
+
+<http://demo.amsl.technology/consortial/Organisation_konsortial/MusterLieferant> a foaf:Organization ;
+                                                                                          rdfs:label "Muster-Lieferant" ;
+                                                                                          ns0:hasEmail <mailto:service@lieferanten-muster.de> ;
+                                                                                          ns0:hasTelephone <tel:012345678> ;
+                                                                                          amsl:organizationType amsl:Enterprise ;
+                                                                                          ns0:postal-code "12345" ;
+                                                                                          ns0:locality "Musterstadt" ;
+                                                                                          ns0:street-address "Musterstraße 4" ;
+                                                                                          ns0:hasURL <http://www.lieferanten-muster.de> ;
+                                                                                          ns0:organization-name "Muster-Lieferanten AG" .
+
+<http://demo.amsl.technology/consortial/Organisation_konsortial/Musterland_Konsortium> a foaf:Organization ;
+                                                                                                rdfs:label "Musterland Konsortium" ;
+                                                                                                ns0:hasEmail <mailto:info@konsortium-musterland.de> ;
+                                                                                                ns0:hasTelephone <tel:012345678> ;
+                                                                                                amsl:organizationType amsl:Consortium ;
+                                                                                                amsl:orgNote "Vertritt alle Bibliotheken in Musterland." ;
+                                                                                                ns0:postal-code "12345" ;
+                                                                                                ns0:locality "Musterstadt" ;
+                                                                                                ns0:street-address "Musterstraße 2" ;
+                                                                                                ns0:hasURL <http://www.konsortium-musterland.de> ;
+                                                                                                ns0:organization-name "Musterland Konsortium" .
+
+<http://demo.amsl.technology/consortial/Organisation_konsortial/UB_Musterstadt> a foaf:Organization ;
+                                                                                         rdfs:label "UB Musterstadt" ;
+                                                                                         ns0:hasEmail <mailto:info@ub.musteruni.de> ;
+                                                                                         ns0:hasTelephone <tel:012345678> ;
+                                                                                         amsl:organizationType amsl:Library ;
+                                                                                         amsl:orgNote "Bibliothek der Musteruniversität zu Musterstadt" ;
+                                                                                         ns0:postal-code "12345" ;
+                                                                                         ns0:locality "Musterstadt" ;
+                                                                                         ns0:street-address "Musterstraße 3" ;
+                                                                                         ns0:hasURL <http://www.ub.musteruni.de> ;
+                                                                                         ns0:organization-name "Universitätsbibliothek Musterstadt" .

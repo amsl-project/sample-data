@@ -1,0 +1,77 @@
+@base <http://amsl.technology/config/consortial/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix amsl: <http://vocab.ub.uni-leipzig.de/amsl/> .
+@prefix terms: <http://vocab.ub.uni-leipzig.de/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix amsl: <http://vocab.ub.uni-leipzig.de/amsl/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix lobid: <http://purl.org/lobid/lv#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix count: <http://vocab.ub.uni-leipzig.de/counter/> .
+
+<> a owl:Ontology ;
+   rdfs:label "Config Consortial Organization Management"@en,
+    "Konfiguration Konsortiale Organisationsverwaltung"@de ;
+   owl:imports 	<http://amsl.technology/templates/>,
+   		 <http://lobid.org/> .
+
+
+foaf:Organization a terms:Class;
+	dc:title "Organisation (konsortial)"@de,
+		"Organization (consortial)"@en .
+	
+foaf:Person a  terms:Class;
+	dc:title "Kontakt (konsortial)"@de,
+		"Contact (consortial)"@en .
+
+amsl:Platform a  terms:Class;
+	dc:title "Plattform (konsortial)"@de,
+		"Platform (consortial)"@en  .
+
+
+
+
+rdf:type sysont:order "-1" .
+rdfs:label sysont:order "-2" .
+vcard:hasOrganizationName sysont:order "-3" .
+vcard:organization-name sysont:order "-4" .
+skos:altLabel sysont:order "-5" .
+amsl:organizationType sysont:order "-1015" .
+lobid:isil sysont:order "-1020" .
+amsl:linkToHoldingsFile sysont:order "-1025" .
+amsl:holdingsFile sysont:order "-1030" .
+count:hasOrganization-ID sysont:order "-1035" .
+dc:subject sysont:order "-1040" .
+amsl:orgNote sysont:order "-1045" .
+amsl:isMemberOf sysont:order "-1050" .
+vcard:role sysont:order "-1055" .
+amsl:contactNote sysont:order "-1060" .
+vcard:given-name sysont:order "-1065" .
+vcard:family-name sysont:order "-1070" .
+vcard:street-address sysont:order "-1075" .
+vcard:postal-code sysont:order "-1080" .
+vcard:locality sysont:order "-1085" .
+vcard:country-name sysont:order "-1090" .
+vcard:hasURL sysont:order "-1095" .
+vcard:url sysont:order "-1096" .
+vcard:hasTelephone sysont:order "-1100" .
+vcard:hasEmail sysont:order "-1105" .
+vcard:email sysont:order "-1106" .
+count:creates sysont:order "-1110" .
+count:receives sysont:order "-1115" .
+amsl:shibbolethImplStatus sysont:order "-1120" .
+rdfs:comment sysont:order "-15000" .
+
+
+

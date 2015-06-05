@@ -1,0 +1,456 @@
+@base <http://amsl.technology/templates/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix aiiso: <http://purl.org/vocab/aiiso/schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix amsl: <http://vocab.ub.uni-leipzig.de/amsl/> .
+@prefix terms: <http://vocab.ub.uni-leipzig.de/terms/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix lobid: <http://purl.org/lobid/lv#> .
+@prefix rdvocab: <http://rdaregistry.info/> .
+@prefix count: <http://vocab.ub.uni-leipzig.de/counter/> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix sushi: <http://vocab.ub.uni-leipzig.de/sushi/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+
+
+<> a owl:Ontology ;
+   rdfs:label "Templates"@en, "Templates (Vorlagen)"@de ;
+   owl:imports <http://vocab.ub.uni-leipzig.de/amsl/>, <http://amsl.technology/labels/>, <http://vocab.ub.uni-leipzig.de/terms/> , <http://vocab.ub.uni-leipzig.de/counter/> ;
+   rdfs:comment "Diese Wissensbasis ist eine Sammlung von Vorlagen."@de , "This knowledge base is a collection of templates."@en .
+
+<Ontologie> rdfs:label "Ontologie"@de , "ontology"@en .
+
+#### als Kommentar nach den Properties folgt die Angabe, ob die Property sinnvoll wiederholbar ist odre nur einmal verwendet werden sollte.
+
+##### Template	
+
+<http://amsl.technology/templates/Vorlage/Template_fuer_Templates> a terms:Template ;
+	rdfs:label "Template für Templates"@de , "Template for templates"@en ;
+	terms:bindsClass terms:Template ;
+	terms:providesProperty	terms:bindsClass, #1
+				terms:providesProperty, #x
+				terms:optionalProperty ; #x
+	terms:optionalProperty	rdfs:comment . #x
+
+
+
+##### Vertragsübergreifend, konsortial gepflegt #####
+
+
+##### Organisation
+
+<Template_for_foaf_org> a terms:Template ;
+	rdfs:label "Template für Organisationen"@de , "Template for organizations"@en ;
+	terms:bindsClass foaf:Organization ;
+	terms:providesProperty	vcard:postal-code, #1
+				vcard:locality, #1
+				vcard:hasEmail, #x
+				vcard:organization-name, #1
+				vcard:hasTelephone, #x
+				vcard:street-address, #1
+				amsl:organizationType, #1
+				amsl:orgNote , #x
+				vcard:hasURL ; #x
+	terms:optionalProperty	lobid:isil, #1
+	            count:hasOrganizationID , #1
+				dc:subject, #x
+				vcard:country-name , #1
+				count:creates , #x
+                count:receives , #x
+                amsl:linkToHoldingsFile , #1
+                amsl:holdingsFile ,
+                amsl:file ,
+                skos:altLabel ,
+                vcard:email , #für lobid
+                vcard:url , #für lobid
+				rdfs:comment .	#x		
+			
+##### Kontakt
+
+<Template_for_Contacts> a terms:Template ;
+	rdfs:label "Template für Kontakte"@de , "Template for contacts"@en ;
+	terms:bindsClass foaf:Person ;
+	terms:providesProperty 	rdfs:label, #1
+				vcard:postal-code, #1
+				vcard:locality, #1
+				amsl:contactNote, #x
+				vcard:family-name, #1
+				vcard:given-name, #x
+				vcard:hasEmail, #x
+				vcard:role, #x
+				vcard:hasTelephone, #x
+				vcard:street-address, #x
+				amsl:isMemberOf ; #x
+	terms:optionalProperty	vcard:country-name, #1
+				rdfs:comment . #x
+
+
+##### Plattform
+
+<http://amsl.technology/templates/Vorlage/Template_fuer_Plattformen> a terms:Template ;
+	rdfs:label "Template für Plattformen"@de , "Template for platforms"@en ;
+	terms:bindsClass amsl:Platform ;
+	terms:providesProperty	rdfs:label, #1
+				vcard:hasURL , #1
+				amsl:shibbolethImplStatus ; #1
+	terms:optionalProperty	rdfs:comment . #x
+
+
+
+
+#### Vertragsübergreifend, lokal gepflegt #####
+
+##### Fakultät
+
+<Template_fuer_Fakultaeten> a terms:Template ;
+	rdfs:label "Template für Fakultäten"@de , "Template for faculties"@en ;
+	terms:bindsClass aiiso:Faculty ;
+	terms:providesProperty	rdfs:label, #1
+				amsl:costCenter, #x
+				amsl:field, #x
+				amsl:facultyAbbr ; #1
+	terms:optionalProperty	rdfs:comment . #x
+				
+
+##### Budget
+
+<Template_fuer_Budgets> a terms:Template ;
+	rdfs:label "Template für Budgets"@de , "Template for budgets"@en ;
+	terms:bindsClass amsl:Budget ;
+	terms:providesProperty	rdfs:label, #1
+				amsl:budgetAbbr ; #1
+	terms:optionalProperty	rdfs:comment . #x
+	
+	
+	
+#### Vertragsspezifisch, konsortial oder loakl gepflegt #####
+
+##### Vertragsbasisdaten
+
+
+<Template_for_BasicContractData> a terms:Template ;
+	rdfs:label "Template für Vertragsbasisdaten"@de , "Tenplate for basic contract data"@en ;
+	terms:bindsClass amsl:BasicContractData ;
+	terms:providesProperty 	
+				rdfs:label, #1
+				amsl:description, #1
+				amsl:initialAcquisitionDate, #1
+				amsl:licensee, #1
+				amsl:licensingNote, #x
+				amsl:licensor, #1
+				dct:creator, #x
+				amsl:internalContact, #x
+				amsl:platform, #x
+				amsl:concUser, #1
+				amsl:coursePackE, #1
+				amsl:coursePackP, #1
+				amsl:courseReserveE, #1
+				amsl:courseReserveP, #1
+				amsl:digitallyCopy, #1
+				amsl:erAltTitle, #x
+				amsl:acqMethod, #1
+				amsl:authMethod, #x
+				amsl:erStatus, #x
+				amsl:erType, #1
+				amsl:localSystemNumber, #x
+				amsl:pCopy, #1
+				amsl:hasRemoteAccess, #1
+				amsl:scholarlySharing ; #1
+	terms:optionalProperty	amsl:archivingNote, #1
+				amsl:consortiumLeader ,
+				amsl:consortium ,
+				amsl:individualContractItems ,
+				amsl:linkToDescription, #x
+				amsl:dbType, #1
+				amsl:noticePeriod, #1
+				amsl:primaryAccessURI, #x
+				amsl:authorizedUser, #x
+				amsl:terminationReason, #1
+				amsl:terminationDate, #1
+				amsl:shutDownDate, #1
+				amsl:dataAvailability, #1
+				amsl:mailFile,
+				amsl:file,
+				amsl:contractFile,
+				rdfs:comment, #x
+				amsl:expectedInvoiceMonth, #umgestellt auf expectedInvoiceDate an den Jahresdaten, nur noch zum Vergleich
+				amsl:previousContract . #x	
+
+
+##### Vertragsjahresdaten	
+
+<Template_for_AnnualContractData> a terms:Template ;
+	rdfs:label "Template für Vertragsjahresdaten"@de , "Template for annual contract data"@en ;
+	terms:bindsClass amsl:AnnualContractData ;
+	terms:providesProperty	
+				rdfs:label, #1
+				amsl:invoicePriceGrossEUR, #1
+				amsl:licenseStartDate, #1
+				amsl:licenseType, #1
+				amsl:invoiceFile ,
+				# amsl:consortium, #1 Jetzt bei Basisdaten.
+				amsl:externalContact, #x
+				amsl:licenseEndDate, #1
+				amsl:terminationAlert, #1
+				amsl:noticePeriod, #1
+				amsl:contractFile ,
+				amsl:basicContractData, #1
+				amsl:budget, #x
+				amsl:paymentPeriod, #1
+				amsl:licensingAgent, #1
+				amsl:invoiceReceived, #1
+				amsl:expectedInvoiceDate, #1
+				amsl:invoiceDate, #1
+				amsl:expectedPrice ; #1
+	terms:optionalProperty	amsl:invoicePriceNetEUR, #1
+				amsl:linkToInvoice, #x
+				amsl:invoicePriceGrossUSD, #1
+				amsl:linkToContract, #x
+				amsl:invoicePriceNetUSD,  #1
+				amsl:invoicePriceGrossGBP, #1
+				amsl:invoicePriceNetGBP, #1
+				amsl:expectedPriceFollowingYear, #1
+				amsl:feedbackDate, #1
+				amsl:localSystemNumber, #x
+				amsl:usageStatsNote, #x
+				amsl:annualPrice, #1
+				amsl:linkToBalance, #x
+				amsl:balanceFile,
+				amsl:mailFile,
+				amsl:file,
+				rdfs:comment . #x
+
+##### Paket				
+
+<Template_fuer_Pakete> a terms:Template ;
+	rdfs:label "Template für Pakete"@de , "Template for license packages"@en ;
+	terms:bindsClass amsl:LicensePackage ;
+	terms:providesProperty	rdfs:label, #1
+				amsl:contractContainingPackage ; #1
+	terms:optionalProperty	rdfs:comment . #x
+				
+				
+
+##### Vertragsposition				
+
+<Template_fuer_Vertragspositionen> a terms:Template ;
+	rdfs:label "Template für Vertragspositionen"@de , "Template for contract items"@en ;
+	terms:bindsClass amsl:ContractItem ;
+	terms:providesProperty 	amsl:contractItemOf, #1
+				dc:title, #1
+				amsl:itemPrice ; #1
+	terms:optionalProperty	
+				amsl:eissn, #x
+				amsl:pissn, #x
+				amsl:eisbn, #x
+				amsl:pisbn, #x
+				amsl:proprietaryID, #x
+				amsl:doi, #x
+				rdvocab:P60163, #1
+				dc:publisher, #1
+				dct:issued, #1
+				dct:language, #x
+				bibo:issn, #x
+				amsl:localSystemNumber, #1
+				rdvocab:P60493, #1
+				bibo:shortTitle, #1
+				rdfs:comment . #x
+								
+				
+
+##### Zeitschrift				
+
+<Template_fuer_Periodicals> a terms:Template ;
+	rdfs:label "Template für Periodicals"@de , "Template for periodicals"@en ;
+	terms:bindsClass bibo:Periodical ;
+	terms:providesProperty	dc:title, #1
+				rdvocab:P60163, #1
+				dc:publisher, #x
+				dct:issued, #1
+				dct:language, #x
+				bibo:issn, #x
+				rdvocab:P60493, #1
+				bibo:shortTitle; #1
+	terms:optionalProperty 	rdfs:comment , #x
+							rdfs:label . 
+
+
+
+### Dokument
+
+<Template_fuer_Dokumente> a terms:Template ;
+	rdfs:label "Template für Dokumente"@de , "Template for documents"@en ;
+	terms:bindsClass foaf:Document ;
+	terms:providesProperty  rdfs:label,
+							dct:description ;
+	terms:optionalProperty  dct:format,
+							dc:title ,
+							terms:uploadDate ,
+							terms:uploadedBy ,
+							rdfs:comment .
+	
+
+
+### COUNTER
+
+### Report
+
+
+<Template_fuer_Reports> a terms:Template ;
+	rdfs:label "Template für COUNTER-Reports"@de , "Template for COUNTER-reports"@en ;
+	terms:bindsClass count:Report ;
+	terms:providesProperty	count:wasCreatedOn , #1
+	                        count:hasReportTitle , #1
+	                        count:hasReportVersion , #1
+	                        count:hasReportID ; #1
+	terms:optionalProperty	rdfs:comment . #x
+
+### Reportelement
+
+<Template_fuer_Reportelemente> a terms:Template ;
+	rdfs:label "Template für COUNTER-Reportelemente"@de , "Template for COUNTER-report items"@en ;
+	terms:bindsClass count:ReportItem    ;
+	terms:providesProperty	count:hasItemDatatype , #1
+	                        count:hasPerformance , #x
+	                        count:hasItemName, #1
+	                        count:isContainedIn , #x
+	                        count:isAccessibleVia , #1
+	                        dc:publisher , #1
+	                        amsl:doi , #1
+	                        amsl:proprietaryID , #1
+	                        amsl:pisbn , #x
+	                        amsl:pissn,  #x
+	                        amsl:eisbn ,  #x
+	                        amsl:eissn;  #x
+	terms:optionalProperty	rdfs:comment . #x
+
+
+### Zählinstanz
+
+<Template_fuer_Zaehlinstanzen> a terms:Template ;
+	rdfs:label "Template für COUNTER-Zählinstanzen"@de , "Template for COUNTER-Counting instances"@en ;
+	terms:bindsClass count:CountingInstance ;
+	terms:providesProperty	 count:measuredForPeriod , #1
+	                         count:measuresCategory , #1
+	                         count:hasMetricType , #1
+	                         count:hasCount , #1
+	                         count:considersPubYear , #1
+	                         count:wasCountedIn ; #1
+                         terms:optionalProperty	rdfs:comment . #x
+
+### SUSHI
+
+<Template_for_SushiSetting> a terms:Template ;
+	rdfs:label "Template für SUSHI Einstellungen"@de , "Template for SUSHI setting"@en ;
+	terms:bindsClass sushi:SushiSetting ;
+	terms:providesProperty 	rdfs:label,
+								terms:hasAmslLicensor,
+								sushi:hasSushiUrl ,
+								sushi:hasSushiCustomerID ,
+								sushi:hasSushiRequestorID ,
+								sushi:hasSushiRequestorName , 
+								sushi:hasSushiRequestorMail , 
+								sushi:hasSushiReportName ,
+								sushi:hasSushiReportRelease ,
+								sushi:hasSushiFilter ;
+	terms:optionalProperty rdfs:comment .
+
+
+<Template_for_SushiFilter> a terms:Template ;
+	rdfs:label "Template für SUSHI Filter"@de , "Template for SUSHI filter"@en ;
+	terms:bindsClass sushi:SushiSetting ;
+	terms:providesProperty 	rdfs:label;
+	terms:optionalProperty rdfs:comment .
+
+
+##Artikelindex
+
+<Template_for_MetadataSource> a terms:Template ;
+	rdfs:label "Template für Metadatenquellen"@de , "Template for Metadata Sources"@en ;
+	terms:bindsClass amsl:MetadataSource ;
+	terms:providesProperty 	rdfs:label,
+								amsl:metadataSourceImplStatus,
+								dct:creator,
+								amsl:externalContact,
+								amsl:internalContact,								
+								amsl:indexingLevel,
+								dc:format, # veraltet
+								# dct:format , neu
+								amsl:primaryAccessURI ,
+								gr:availableDeliveryMethods,
+								amsl:updateRhythm ,
+								amsl:nextUpdateDate ,
+								amsl:licensingNote ,
+								amsl:sourceID ,
+								amsl:linkToContract;								
+								
+	terms:optionalProperty rdfs:comment .
+
+
+<Template_for_MetadataCollection> a terms:Template ;
+	rdfs:label "Template für Metadatenkollektionen"@de , "Template for Metadata Collections"@en ;
+	terms:bindsClass amsl:MetadataCollection ;
+	terms:providesProperty 	rdfs:label,
+								amsl:collectionID ,
+								amsl:includedInMetadataSource ,
+								amsl:metadataUsedByLibrary,
+								amsl:description,
+								amsl:coveredMediumID ;
+
+	terms:optionalProperty rdfs:comment .
+
+
+
+
+
+### Order Classes ###
+
+ foaf:Organization	sysont:order	"9001" .
+
+ foaf:Person	sysont:order	"9002" .
+
+ amsl:Platform	sysont:order	"9003" .
+
+ aiiso:Faculty	sysont:order	"9004" .
+
+ amsl:Budget	sysont:order	"9005" .
+
+ amsl:BasicContractData	sysont:order	"9006" .
+
+ amsl:AnnualContractData	sysont:order	"9007" .
+
+ amsl:LicensePackage	sysont:order	"9008" .
+
+ amsl:ContractItem	sysont:order	"9009" .
+
+ bibo:Periodical	sysont:order	"9010" .
+
+foaf:Document sysont:order "9011" .
+
+ count:ReportItem sysont:order "9012" .
+
+ amsl:MetadataSource  sysont:order "9013" .
+
+ amsl:MetadataCollection sysont:order "9014" .
+
+  sushi:SushiSetting sysont:order "9015" .
+
+ sushi:SushiFilter sysont:order "9016" .
+ 
+
+ ## Order Template
+
+terms:bindsClass sysont:order "-100" .
+terms:providesProperty sysont:order "-105" .
+terms:optionalProperty sysont:order "-110" .
+
+
+

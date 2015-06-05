@@ -1,0 +1,181 @@
+@base <http://amsl.technology/config/consortialcontracts/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix count: <http://vocab.ub.uni-leipzig.de/counter/> .
+@prefix amsl: <http://vocab.ub.uni-leipzig.de/amsl/> .
+@prefix terms: <http://vocab.ub.uni-leipzig.de/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix lobid: <http://purl.org/lobid/lv#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+
+<> a owl:Ontology ;
+   rdfs:label "Config Consortial Contract Management"@en, "Konfiguration Konsortiale Vertragsverwaltung"@de .
+	
+
+amsl:BasicContractData a terms:Class ;
+	skos:prefLabel "Vertragsbasisdaten"@de,
+		"Basic Contract Data"@en  .
+		
+amsl:AnnualContractData a terms:Class;
+	skos:prefLabel "Vertragsjahresdaten"@de, 
+		"Annual Contract Data"@en .
+	
+amsl:LicensePackage a  terms:Class;
+	skos:prefLabel "Paket"@de, 
+		"license package"@en  .
+	
+amsl:ContractItem a terms:Class;
+	skos:prefLabel "Vertragsposition"@de, 
+		"Contract Item"@en .
+	
+bibo:Periodical a terms:Class;
+	skos:prefLabel "Zeitschrift"@de, 
+		"Periodical"@en  .
+
+foaf:Document a terms:Class;
+	skos:prefLabel "Dokument"@de,
+		"Document"@en .	
+
+
+		
+		
+		
+foaf:Organization a terms:Class;
+	skos:prefLabel "Organisation (Import)"@de,
+		"Organization (import)"@en .
+	
+foaf:Person a  terms:Class;
+	skos:prefLabel "Kontakt (Import)"@de,
+		"Contact (import)"@en .	
+
+amsl:Platform a  terms:Class;
+	skos:prefLabel "Plattform (Import)"@de,
+		"Platform (import)"@en  .
+
+		
+
+		
+amsl:basicContractData sysont:order "-100" .
+amsl:licenseStartDate sysont:order "-105" .
+amsl:licenseEndDate sysont:order "-110" .
+amsl:noticePeriod sysont:order "-115" .
+amsl:terminationAlert sysont:order "-120" .
+amsl:feedbackDate sysont:order "-125" .
+amsl:licenseType sysont:order "-130" .
+amsl:usageStatsNote sysont:order "-135" .
+amsl:licensingAgent sysont:order "-140" .
+amsl:externalContact sysont:order "-145" .
+amsl:budget sysont:order "-150" .
+amsl:paymentPeriod sysont:order "-155" .
+amsl:annualPrice sysont:order "-160" .
+amsl:invoicePriceGrossEUR sysont:order "-165" .
+amsl:invoicePriceNetEUR sysont:order "-170" .
+amsl:invoicePriceGrossUSD sysont:order "-175" .
+amsl:invoicePriceNetUSD sysont:order "-180" .
+amsl:invoicePriceGrossGBP sysont:order "-185" .
+amsl:invoicePriceNetGBP sysont:order "-190" .
+amsl:expectedPrice sysont:order "-195" .
+amsl:expectedPriceFollowingYear sysont:order "-200" .
+amsl:invoiceReceived sysont:order "-205" .
+amsl:expectedInvoiceDate sysont:order "-210" .
+amsl:invoiceDate sysont:order "-215" .
+amsl:linkToInvoice sysont:order "-220" .
+amsl:invoiceFile sysont:order "-225" .
+amsl:linkToBalance sysont:order "-230" .
+amsl:balanceFile sysont:order "-235" .
+amsl:linkToContract sysont:order "-240" .
+amsl:contractFile sysont:order "-245" .
+amsl:erAltTitle sysont:order "-250" .
+amsl:erStatus sysont:order "-255" .
+amsl:erType sysont:order "-260" .
+amsl:dbType sysont:order "-265" .
+amsl:acqMethod sysont:order "-270" .
+amsl:consortium sysont:order "-275" .
+amsl:consortiumLeader sysont:order "-280" .
+amsl:individualContractItems sysont:order "-285" .
+amsl:previousContract sysont:order "-290" .
+amsl:description sysont:order "-295" .
+amsl:linkToDescription sysont:order "-300" .
+amsl:platform sysont:order "-305" .
+amsl:primaryAccessURI sysont:order "-310" .
+amsl:dataAvailability sysont:order "-315" .
+dct:creator sysont:order "-320" .
+amsl:licensor sysont:order "-325" .
+amsl:licensee sysont:order "-330" .
+amsl:internalContact sysont:order "-335" .
+amsl:authorizedUser sysont:order "-340" .
+amsl:authMethod sysont:order "-345" .
+amsl:hasRemoteAccess sysont:order "-350" .
+amsl:concUser sysont:order "-355" .
+amsl:illElectronic sysont:order "-360" .
+amsl:illset sysont:order "-365" .
+amsl:illPrintOrFax sysont:order "-370" .
+amsl:illNote sysont:order "-375" .
+amsl:scholarlySharing sysont:order "-380" .
+amsl:digitallyCopy sysont:order "-385" .
+amsl:pCopy sysont:order "-390" .
+amsl:coursePackE sysont:order "-395" .
+amsl:coursePackP sysont:order "-400" .
+amsl:courseReserveE sysont:order "-405" .
+amsl:courseReserveP sysont:order "-410" .
+amsl:licensingNote sysont:order "-415" .
+amsl:initialAcquisitionDate sysont:order "-420" .
+amsl:expectedInvoiceMonth sysont:order "-425" .
+amsl:terminationReason sysont:order "-430" .
+amsl:terminationDate sysont:order "-435" .
+amsl:shutDownDate sysont:order "-440" .
+amsl:archivingNote sysont:order "-445" .
+amsl:budgetAbbr sysont:order "-450" .
+amsl:facultyAbbr sysont:order "-455" .
+amsl:field sysont:order "-460" .
+amsl:costCenter sysont:order "-465" .
+amsl:contractContainingPackage sysont:order "-470" .
+dc:title sysont:order "-475" .
+bibo:shortTitle sysont:order "-480" .
+count:hasItemName sysont:order "-485" .
+<http://rdaregistry.info/P60493> sysont:order "-490" .
+<http://rdvocab.info/P60493> sysont:order "-495" .
+dc:publisher sysont:order "-500" .
+count:isAccessibleVia sysont:order "-505" .
+<http://rdaregistry.info/P60163> sysont:order "-510" .
+<http://rdvocab.info/P60163> sysont:order "-515" .
+dct:issued sysont:order "-520" .
+dct:language sysont:order "-525" .
+amsl:contractItemOf sysont:order "-530" .
+count:hasItemDatatype sysont:order "-535" .
+bibo:issn sysont:order "-540" .
+amsl:doi sysont:order "-545" .
+amsl:proprietaryID sysont:order "-550" .
+amsl:eisbn sysont:order "-555" .
+amsl:eissn sysont:order "-560" .
+amsl:pisbn sysont:order "-565" .
+amsl:pissn sysont:order "-570" .
+amsl:itemPrice sysont:order "-575" .
+dct:description sysont:order "-580" .
+dct:format sysont:order "-585" .
+count:isContainedIn sysont:order "-590" .
+count:hasPerformance sysont:order "-595" .
+count:wasCountedIn sysont:order "-600" .
+count:measuredForPeriod sysont:order "-605" .
+count:considersPubYear sysont:order "-610" .
+count:measuresCategory sysont:order "-615" .
+count:hasMetricType sysont:order "-620" .
+count:hasCount sysont:order "-625" .
+count:hasReportTitle sysont:order "-630" .
+count:wasCreatedOn sysont:order "-635" .
+count:hasReportVersion sysont:order "-640" .
+count:hasReportID sysont:order "-645" .
+terms:uploadedBy sysont:order "-650" .
+terms:uploadDate sysont:order "-655" .
+amsl:mailFile sysont:order "-660" .
+amsl:file sysont:order "-665" .
+amsl:localSystemNumber sysont:order "-10000" .
+dct:created sysont:order "-20000" .

@@ -1,0 +1,72 @@
+@base <http://amsl.technology/config/erm/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix count: <http://vocab.ub.uni-leipzig.de/counter/> .
+@prefix amsl: <http://vocab.ub.uni-leipzig.de/amsl/> .
+@prefix terms: <http://vocab.ub.uni-leipzig.de/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix lobid: <http://purl.org/lobid/lv#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix aiiso: <http://purl.org/vocab/aiiso/schema#> .
+
+<> a owl:Ontology ;
+   rdfs:label "Config ERM (general)"@en, "Konfiguration ERM (allgemein)"@de ;
+   owl:imports <http://amsl.technology/zdb/>, 
+   		<http://amsl.technology/issn2zdb/>.
+
+	
+
+amsl:BasicContractData a terms:Class ;
+	skos:prefLabel "Vertragsbasisdaten"@de,
+		"Basic Contract Data"@en  .
+		
+amsl:AnnualContractData a terms:Class;
+	skos:prefLabel "Vertragsjahresdaten"@de, 
+		"Annual Contract Data"@en .
+	
+amsl:LicensePackage a  terms:Class;
+	skos:prefLabel "Paket"@de, 
+		"license package"@en  .
+	
+amsl:ContractItem a terms:Class;
+	skos:prefLabel "Vertragsposition"@de, 
+		"Contract Item"@en .
+	
+bibo:Periodical a terms:Class;
+	skos:prefLabel "Zeitschrift"@de, 
+		"Periodical"@en  .
+	
+foaf:Document a terms:Class;
+	skos:prefLabel "Dokument"@de,
+		"Document"@en .		
+
+aiiso:Faculty a terms:Class ;
+              skos:prefLabel "Faculty"@en, "Fakultät"@de .
+
+amsl:Budget a terms:Class ;
+            skos:prefLabel "Budget"@de, "Budget"@en .
+
+		
+		
+foaf:Organization a terms:Class;
+	skos:prefLabel "Organisation (Import)"@de,
+		"Organization (import)"@en .
+	
+foaf:Person a  terms:Class;
+	skos:prefLabel "Kontakt (Import)"@de,
+		"Contact (import)"@en .	
+
+amsl:Platform a  terms:Class;
+	skos:prefLabel "Plattform (Import)"@de,
+		"Platform (import)"@en  .
+
+
+		

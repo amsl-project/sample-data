@@ -1,0 +1,73 @@
+@prefix terms: <http://vocab.ub.uni-leipzig.de/terms/> .
+@prefix amsl: <http://vocab.ub.uni-leipzig.de/amsl/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sushi: <http://vocab.ub.uni-leipzig.de/sushi/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<http://vocab.ub.uni-leipzig.de/terms/> a owl:Ontology ;
+   rdfs:label "Vocabulary amsl terms"@en,
+    "Vokabular amsl Terms"@de ;
+    rdfs:comment "Diese Wissensbasis enthält Definitionen von Klassen und Eigenschaften, die für interne Funktionen von amsl, wie bspw. Templates, benötigt werden."@de,
+    "This knowledgebase contains definitions of classes and properties needed for internal functions of amsl, like e.g. templates."@en .
+
+terms:Template a rdfs:Class ;
+    rdfs:label "Template"@de,
+        "Template"@en ;
+    rdfs:comment "Templates sind Vorlagen, die die Anzeige bestimmter Ressourcen in  Detailansicht und Formularen regeln."@de,
+    	 "Templates regulating the display of certain resources in detail view and forms."@en . 
+
+terms:bindsClass a owl:ObjectProperty ;
+    rdfs:label "reguliert Klasse"@de,
+        "binds class"@en ;
+    rdfs:comment "Verknüpft die Klasse, die durch das Template reguliert wird."@de ,
+    	"Links the class bound by the template."@en ;
+    rdfs:domain terms:Template ;
+    rdfs:range rdfs:Class.    
+
+terms:uploadDate a owl:DatatypeProperty ;
+    rdfs:subPropertyOf dct:created   ;
+    rdfs:label "upload date"@en , "hochgeladen am"@de ;
+    rdfs:comment "Links the date and time a file has been uploaded"@en , 
+        "Verknüpft Datum und Zeit, zu der eine Datei hochgeladen wurde."@de ;
+    rdfs:domain foaf:Document ;
+    rdfs:range xsd:dateTime . 
+
+terms:uploadedBy a owl:ObjectProperty ;
+    rdfs:subPropertyOf dct:creator ;
+    rdfs:label "uploaded by"@en , "hochgeladen von"@de ;
+    rdfs:comment "Links the user account that has uploaded a file."@en ,
+        "Verküpft den Nutzeraccount, der eine Datei hochgeladen hat."@de ;
+    rdfs:domain foaf:Document ;
+    rdfs:range sioc:User .
+ 
+terms:hasAmslLicensor a owl:ObjectProperty ;
+    rdfs:label "amsl Lizenzgeber"@de, "amsl licensor"@en ;
+    rdfs:comment "Verknüpft eine SUSHI Eistellung mit dem amsl Lizenzgeber, für den sie gültig ist."@de, "Links a SUSHI Setting with the amsl licensor for which it is valid."@en ;
+    rdfs:domain sushi:SushiSetting ;
+    rdfs:range foaf:Organization .
+
+terms:optionalProperty a owl:ObjectProperty ;
+    rdfs:label "Optionale Eigenschaft"@de,
+        "optional property"@en ;
+    rdfs:comment "Verknüpft eine optional vorhandene Eigenschaft"@de ,
+        "Links a optional property."@en ;
+    rdfs:domain terms:Template ;
+    rdfs:range rdf:Property .    
+
+terms:providesProperty a owl:ObjectProperty ;
+    rdfs:label "Standardeigenschaft"@de,
+        "standard property"@en ;
+    rdfs:comment "Verknüpft eine standardmäßig vorhandene Eigenschaft"@de ,
+    	"Links a standard property."@en ;
+    rdfs:domain terms:Template ;  
+    rdfs:range rdf:Property .    
+    
+
+
+
