@@ -1,0 +1,234 @@
+# Exported with the Erfurt API - http://aksw.org/Projects/Erfurt
+
+@base <http://localhost/OntoWiki/Config/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix amsl: <http://vocab.ub.uni-leipzig.de/amsl/> .
+@prefix rdavocab: <http://rdvocab.info/> .
+@prefix geonames: <http://www.geonames.org/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix aiiso: <http://purl.org/vocab/aiiso/schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix grs: <http://www.georss.org/georss/> .
+@prefix str: <http://exslt.org/strings> .
+@prefix sioct: <http://rdfs.org/sioc/types#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix dnb_intern: <http://dnb.de/> .
+@prefix gnd: <http://d-nb.info/standards/elementset/gnd#> .
+@prefix lib: <http://purl.org/library/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dbpprop: <http://dbpedia.org/property/> .
+@prefix terms: <http://vocab.ub.uni-leipzig.de/terms/> .
+@prefix lobid: <http://purl.org/lobid/lv#> .
+@prefix sushi: <http://vocab.ub.uni-leipzig.de/sushi/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
+@prefix daia: <http://purl.org/ontology/daia/> .
+@prefix counter: <http://vocab.ub.uni-leipzig.de/counter/> .
+@prefix umbel: <http://umbel.org/umbel/rc/> .
+@prefix gml: <http://www.opengis.net/gml/> .
+@prefix dbpedia-datatype: <http://dbpedia.org/datatype/> .
+@prefix sysbase: <http://ns.ontowiki.net/SysBase/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix populatedplaces: <http://dbpedia.org/ontology/PopulatedPlace/> .
+@prefix yago: <http://dbpedia.org/class/yago/> .
+
+# MODELS
+
+<> a owl:Ontology, sysont:Model ;
+   rdfs:label "System Configuration", "OntoWiki System Configuration" ;
+   owl:imports <http://ns.ontowiki.net/SysOnt/> ;
+   rdfs:comment "This is your configuration model. You can configure model based access control and some actions here.", "This is your OntoWiki configuration model. You can configure model based access control and some actions here." ;
+   owl:versionInfo <http://code.google.com/p/ontowiki/source/list?path=/erfurt/src/Erfurt/include/SysOntLocal.rdf>, <https://github.com/AKSW/Erfurt/commits/develop/library/Erfurt/include/SysOntLocal.ttl> ;
+   sysont:hidden "1"^^xsd:integer ;
+   sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "sysbase=http://ns.ontowiki.net/SysBase/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+<http://ns.ontowiki.net/SysOnt/> a owl:Ontology, sysont:Model ;
+                                 sysont:hidden "1"^^xsd:integer ;
+                                 sysont:isLarge "1"^^xsd:integer ;
+                                 sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "umbel=http://umbel.org/umbel#", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+
+
+
+
+<http://vocab.ub.uni-leipzig.de/amsl/> a sysont:Model ;
+                                       sysont:hidden "1"^^xsd:integer ;
+                                       sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "umbel=http://umbel.org/umbel#", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+<http://amsl.technology/issn2faculties/> a sysont:Model ;
+                                         sysont:hidden "1"^^xsd:integer ;
+                                         sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "umbel=http://umbel.org/umbel#", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+<http://xmlns.com/foaf/0.1/> a sysont:Model ;
+                             sysont:hidden "1"^^xsd:integer ;
+                             sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "umbel=http://umbel.org/umbel#", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+<http://amsl.technology/config/consortial/> a sysont:Model ;
+                                            sysont:hidden "1"^^xsd:integer ;
+                                            sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "umbel=http://umbel.org/umbel#", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+<http://amsl.technology/templates/> a sysont:Model ;
+                                    sysont:hidden "1"^^xsd:integer ;
+                                    sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "umbel=http://umbel.org/umbel#", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+<http://vocab.ub.uni-leipzig.de/terms/> a owl:Ontology, sysont:Model ;
+                                        sysont:hidden "1"^^xsd:integer ;
+                                        sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "umbel=http://umbel.org/umbel#", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+<http://demo.amsl.technology/config/erm/> a sysont:Model ;
+                                          sysont:hidden "1"^^xsd:integer ;
+                                          sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "umbel=http://umbel.org/umbel#", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+<http://amsl.technology/zdb/> a sysont:Model ;
+                              sysont:hidden "1"^^xsd:integer ;
+                              sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "umbel=http://umbel.org/umbel#", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+<http://amsl.technology/issn2zdb/> a sysont:Model ;
+                                   sysont:hidden "1"^^xsd:integer ;
+                                   sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "umbel=http://umbel.org/umbel#", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+<http://demo.amsl.technology/sample-data/consortial/> a sysont:Model ;
+                                          sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "isbd=http://iflastandards.info/ns/isbd/elements/", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "dcterms=http://purl.org/dc/terms/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "ns2=http://vocab.ub.uni-leipzig.de/amsl/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "gbv=http://purl.org/ontology/gbv/", "dcmitype=http://purl.org/dc/dcmitype/", "geo=http://www.w3.org/2003/01/geo/wgs84_pos#", "ns1=http://amsl.technology/platforms/", "vcard2006=http://www.w3.org/2006/vcard/ns#", "sysBase=http://ns.ontowiki.net/SysBase/", "ns4=http://ubl.amsl.technology/sample-data/erm/Plattform/" .
+
+<http://lobid.org/> a sysont:Model ;
+                    sysont:hidden "1"^^xsd:integer ;
+                    sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "isbd=http://iflastandards.info/ns/isbd/elements/", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "ns0=http://purl.org/ontology/mo/", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "dcterms=http://purl.org/dc/terms/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "sysbase=http://ns.ontowiki.net/SysBase/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "gbv=http://purl.org/ontology/gbv/", "dcmitype=http://purl.org/dc/dcmitype/", "geo=http://www.w3.org/2003/01/geo/wgs84_pos#", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+<http://demo.amsl.technology/sample-data/erm1/> a sysont:Model ;
+                                    sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "ns0=http://umbel.org/umbel#", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "ns5=http://amsl.technology/sample-data/consortial/", "ns4=http://ubl.amsl.technology/sample-data/erm/Vertragsbasisdaten_konsortial/", "sysBase=http://ns.ontowiki.net/SysBase/", "ns7=http://amsl.technology/sample-data/consortial/Organisationen_foaf/", "ns6=http://lobid.org/organisation/", "ns3=http://ubl.amsl.technology/sample-data/erm/Vertragsbasisdaten/", "ns1=http://rdaregistry.info/Elements/u/", "ns2=https://amsl.technology/sample-data/consortial/" .
+
+<http://demo.amsl.technology/sample-data/erm2/> a sysont:Model ;
+                                    sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "ns0=http://umbel.org/umbel#", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "ns5=http://amsl.technology/sample-data/consortial/", "ns4=http://ubl.amsl.technology/sample-data/erm/Vertragsbasisdaten_konsortial/", "sysBase=http://ns.ontowiki.net/SysBase/", "ns7=http://amsl.technology/sample-data/consortial/Organisationen_foaf/", "ns6=http://lobid.org/organisation/", "ns3=http://ubl.amsl.technology/sample-data/erm/Vertragsbasisdaten/", "ns1=http://rdaregistry.info/Elements/u/", "ns2=https://amsl.technology/sample-data/consortial/" .
+
+<http://amsl.technology/config/erm/> a sysont:Model ;
+                                     sysont:hidden "1"^^xsd:integer ;
+                                     sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "umbel=http://umbel.org/umbel#", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+<http://amsl.technology/config/consortialcontracts/> a sysont:Model ;
+                                                     sysont:hidden "1"^^xsd:integer ;
+                                                     sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "umbel=http://umbel.org/umbel#", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+
+<http://amsl.technology/labels/> a sysont:Model ;
+                                 sysont:hidden "1"^^xsd:integer ;
+                                 sysont:prefix "rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#", "sysont=http://ns.ontowiki.net/SysOnt/", "foaf=http://xmlns.com/foaf/0.1/", "sioc=http://rdfs.org/sioc/ns#", "owl=http://www.w3.org/2002/07/owl#", "rdfs=http://www.w3.org/2000/01/rdf-schema#", "vann=http://purl.org/vocab/vann/", "doap=http://usefulinc.com/ns/doap#", "dct=http://purl.org/dc/terms/", "amsl=http://vocab.ub.uni-leipzig.de/amsl/", "umbel=http://umbel.org/umbel#", "rdavocab=http://rdvocab.info/", "geonames=http://www.geonames.org/ontology#", "skos=http://www.w3.org/2004/02/skos/core#", "aiiso=http://purl.org/vocab/aiiso/schema#", "dc=http://purl.org/dc/elements/1.1/", "grs=http://www.georss.org/georss/", "str=http://exslt.org/strings", "sioct=http://rdfs.org/sioc/types#", "xsd=http://www.w3.org/2001/XMLSchema#", "dbpedia-owl=http://dbpedia.org/ontology/", "vs=http://www.w3.org/2003/06/sw-vocab-status/ns#", "vcard=http://www.w3.org/2006/vcard/ns#", "dnb_intern=http://dnb.de/", "gnd=http://d-nb.info/standards/elementset/gnd#", "lib=http://purl.org/library/", "bibo=http://purl.org/ontology/bibo/", "cc=http://creativecommons.org/ns#", "dbpprop=http://dbpedia.org/property/", "terms=http://vocab.ub.uni-leipzig.de/terms/", "lobid=http://purl.org/lobid/lv#", "sushi=http://vocab.ub.uni-leipzig.de/sushi/", "prov=http://www.w3.org/ns/prov#", "schema=http://schema.org/", "daia=http://purl.org/ontology/daia/", "counter=http://vocab.ub.uni-leipzig.de/counter/", "umbel=http://umbel.org/umbel/rc/", "gml=http://www.opengis.net/gml/", "dbpedia-datatype=http://dbpedia.org/datatype/", "org=http://www.w3.org/ns/org#", "populatedplaces=http://dbpedia.org/ontology/PopulatedPlace/", "yago=http://dbpedia.org/class/yago/", "sysBase=http://ns.ontowiki.net/SysBase/" .
+
+
+# ACTIONS
+
+sysont:Login sysont:rawConfig "type=RDF" .
+
+sysont:RegisterNewUser sysont:rawConfig "passregexp=\"\"", "mailvalidation=yes", "uidregexp=\"/^[[:alnum:]]+$/\"", "defaultGroup=http://localhost/OntoWiki/Config/DefaultUserGroup" .
+
+sysont:Rollback sysont:rawConfig "global=on" .
+
+
+# USERS
+
+<Admin> a sioc:User ;
+        rdfs:label "Admin" ;
+        rdfs:comment "This is the pre-configured Admin User." ;
+        foaf:accountName "Admin"^^xsd:string .
+
+sysont:Anonymous sysont:denyModelView sysont:AnyModel ;
+                 sysont:denyAccess sysont:Login, sysont:Rollback .        
+
+<system1> a sioc:User ;
+          rdfs:comment "System-User - ERM 1" ;
+          foaf:accountName "system1"^^xsd:string ;
+          sysont:userPassword "passwort" ;
+          sioc:email <mailto:system.user1@example.org> .
+
+<system2> a sioc:User ;
+          rdfs:comment "System-User - ERM 2" ;
+          foaf:accountName "system2"^^xsd:string ;
+          sysont:userPassword "passwort" ;
+          sioc:email <mailto:system.user2@example.org> . 
+          
+<user1> a sioc:User ;
+        rdfs:comment "User - ERM 1" ;
+        foaf:accountName "user1"^^xsd:string ;
+        sysont:userPassword "passwort" ;
+        sioc:email <mailto:user1@example.org> .
+
+<user2> a sioc:User ;
+        rdfs:comment "User - ERM 2" ;
+        foaf:accountName "user2"^^xsd:string ;
+        sysont:userPassword "passwort" ;
+        sioc:email <mailto:user2@example.org> .
+
+
+
+# USER GROUPS
+
+<AdminGroup> a sioc:Usergroup ;
+             rdfs:label "Grundgruppe Adminrechte"@de, "Basic Group Admin rights"@en ;
+             rdfs:comment "Admin rights allow to trigger all actions and to edit all models but the system ontology.", "Adminrechte umfassen das Auslösen aller Aktionen sowie das Editieren aller Wissensbasen außer der System Ontology. Von diesen Rechten eines Nutzers werden durch Zuordnung zu weiteren Nutzergruppen andere Rechte abgezogen."@de ;
+             sysont:denyModelEdit <http://ns.ontowiki.net/SysOnt/> ;
+             sysont:grantAccess sysont:AnyAction ;
+             sysont:grantModelEdit sysont:AnyModel ;
+             sysont:grantModelView sysont:AnyModel ;
+             sioc:has_member <Admin>, <system1>, <system2>, <user1>, <user2> .
+
+<DefaultUserGroup> a sioc:Usergroup ;
+                   rdfs:label "Default User Group"@en, "Default Nutzergruppe"@de ;
+                   rdfs:comment "Voreingestellt Nutzergruppe, keine Rechte außer Login."@de, "Default user group, no rights but login."@en ;
+                   sysont:denyModelEdit sysont:AnyModel ;
+                   sysont:grantAccess sysont:Login ;
+                   sioc:has_member sysont:Anonymous ;
+                   sysont:denyModelView <http://demo.amsl.technology/sample-data/consortial/>, <http://demo.amsl.technology/sample-data/erm1/>, <http://demo.amsl.technology/sample-data/erm2/> .
+
+<Library1> a sioc:Usergroup ;
+           rdfs:label "Zugehörig zur Bibliothek 1"@de, "Associated with Library 1"@en ;
+           rdfs:comment "For users associated with the University Library 2."@en, "Für Nutzer, die zur Bibliothek 1 gehören."@de ;
+           sioc:has_member <system1>, <user1> ;
+           sysont:denyModelView <http://demo.amsl.technology/sample-data/erm2/> .
+
+<Library2> a sioc:Usergroup ;
+           rdfs:label "Zugehörig zur Bibliothek 2"@de, "Associated with Library 2"@en ;
+           rdfs:comment "For users associated with Library 2."@en, "Für Nutzer, die zur Bibliothek 2 gehören."@de ;
+           sioc:has_member <system2>, <user2> ;
+           sysont:denyModelView <http://demo.amsl.technology/sample-data/erm1/> .
+
+<DenyConfiguration> a sioc:Usergroup ;
+                    rdfs:label "Deny configuration"@en, "Keine Konfigurationsrechte"@de ;
+                    rdfs:comment "Für Nutzer, denen keine Konfigurationsrechte an amsl zustehen. (Betrifft Vokabulare und Konfigurationswissensbasen sowie gewisse Aktionen)"@de, "For users without the right to configurate amsl. (Concerns vocabularies and config knowledgebases as well as certain Actions)"@en ;
+                    sysont:denyModelEdit <http://ns.ontowiki.net/SysOnt/>, <http://vocab.ub.uni-leipzig.de/amsl/>, <http://amsl.technology/config/consortial/>, <http://ns.ontowiki.net/Config/>, <http://amsl.technology/templates/>, <http://vocab.ub.uni-leipzig.de/terms/>, <http://demo.amsl.technology/config/erm/>, <http://amsl.technology/zdb/>, <http://amsl.technology/issn2zdb/>, <http://lobid.org/>, <http://amsl.technology/config/erm/>, <http://amsl.technology/issn2faculties>, <http://amsl.technology/labels/> ;
+                    sioc:has_member <user1>, <user2> ;
+                    sysont:denyAccess sysont:ModelExport, sysont:RegisterNewUser, sysont:Debug, sysont:ExtensionConfiguration, sysont:ModelManagement .
+
+<DenyEditConsortial> a sioc:Usergroup ;
+                     rdfs:label "Deny edit of Consortial Contacts"@en, "Kein Editieren von Konsortiale Kontakte"@de ;
+                     rdfs:comment "For users without the right to edit the Consortial Contacts knowledgebase."@en, "Für Nutzer, die die Wissensbasis Konsortiale Kontakte nicht editieren können sollen."@de ;
+                     sysont:denyModelEdit <http://demo.amsl.technology/sample-data/consortial/> .
+
+<DenyViewConsortial> a sioc:Usergroup ;
+                     rdfs:label "Deny view of Consortial Contacts"@en, "Kein Lesen von Konsortiale Kontakte"@de ;
+                     rdfs:comment "Für Nutzer, die die Wissensbasis Konsortiale Kontakte nicht lesen können sollen."@de, "For users without the right to view the Consortial Contacts knowledgebase."@en ;
+                     sysont:denyModelView <http://demo.amsl.technology/sample-data/consortial/> .
+
+<DenyEditERM> a sioc:Usergroup ;
+              rdfs:label "Kein Editieren von ERM"@de, "Deny edit of ERM"@en ;
+              rdfs:comment "Für Nutzer, die die ERM-Wissensbasen nicht editieren können sollen."@de, "For users without the right to edit the ERM knowledgebases."@en ;
+              sysont:denyModelEdit <http://demo.amsl.technology/sample-data/erm1/>, <http://demo.amsl.technology/sample-data/erm2/> .
+
+<DenyViewERM> a sioc:Usergroup ;
+              rdfs:label "Deny view of ERM"@en, "Kein Lesen von ERM"@de ;
+              rdfs:comment "Für Nutzer, die die ERM-Wissensbasen nicht lesen können sollen."@de, "For users without the right to view the ERM knowledgebases."@en ;
+              sysont:denyModelView <http://demo.amsl.technology/sample-data/erm1/>, <http://demo.amsl.technology/sample-data/erm2/> .
+
+
+
+
